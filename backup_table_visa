@@ -1,0 +1,75 @@
+-- phpMyAdmin SQL Dump
+-- version 3.3.9.2
+-- http://www.phpmyadmin.net
+--
+-- Host: localhost
+-- Generation Time: Oct 03, 2011 at 10:51 PM
+-- Server version: 5.5.9
+-- PHP Version: 5.3.6
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+--
+-- Database: `kuen_kruang`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `visa`
+--
+
+CREATE TABLE `visa` (
+  `origin` varchar(2) COLLATE utf8_unicode_ci NOT NULL,
+  `dest` varchar(2) COLLATE utf8_unicode_ci NOT NULL,
+  `pp_type` int(1) NOT NULL,
+  `need` int(1) NOT NULL,
+  `on_arr` int(1) NOT NULL DEFAULT '0',
+  `day` int(3) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `visa`
+--
+
+INSERT INTO `visa` VALUES('th', 'sg', 1, 0, 0, 30);
+INSERT INTO `visa` VALUES('th', 'my', 1, 0, 0, 30);
+INSERT INTO `visa` VALUES('th', 'la', 1, 0, 0, 30);
+INSERT INTO `visa` VALUES('th', 'kh', 1, 0, 0, 14);
+INSERT INTO `visa` VALUES('th', 'mo', 1, 0, 0, 30);
+INSERT INTO `visa` VALUES('th', 'hk', 1, 0, 0, 30);
+INSERT INTO `visa` VALUES('th', 'vn', 1, 0, 0, 30);
+INSERT INTO `visa` VALUES('th', 'ru', 1, 0, 0, 30);
+INSERT INTO `visa` VALUES('th', 'ph', 1, 0, 0, 21);
+INSERT INTO `visa` VALUES('th', 'id', 1, 0, 0, 30);
+INSERT INTO `visa` VALUES('th', 'bn', 1, 0, 0, 14);
+INSERT INTO `visa` VALUES('th', 'et', 1, 1, 1, 90);
+INSERT INTO `visa` VALUES('th', 'kr', 1, 0, 0, 90);
+INSERT INTO `visa` VALUES('th', 'am', 1, 1, 1, 120);
+INSERT INTO `visa` VALUES('th', 'ar', 1, 0, 0, 90);
+INSERT INTO `visa` VALUES('th', 'bm', 1, 0, 0, 180);
+INSERT INTO `visa` VALUES('th', 'br', 1, 0, 0, 90);
+INSERT INTO `visa` VALUES('th', 'cl', 1, 0, 0, 90);
+INSERT INTO `visa` VALUES('th', 'ec', 1, 0, 0, 90);
+INSERT INTO `visa` VALUES('th', 'ht', 1, 0, 0, 90);
+INSERT INTO `visa` VALUES('th', 'fj', 1, 0, 0, 120);
+INSERT INTO `visa` VALUES('th', 'ge', 1, 0, 0, 360);
+INSERT INTO `visa` VALUES('th', 'ke', 1, 1, 1, 90);
+INSERT INTO `visa` VALUES('th', 'am', 1, 1, 1, 120);
+INSERT INTO `visa` VALUES('th', 'ar', 1, 0, 0, 90);
+INSERT INTO `visa` VALUES('th', 'bm', 1, 0, 0, 180);
+INSERT INTO `visa` VALUES('th', 'br', 1, 0, 0, 90);
+INSERT INTO `visa` VALUES('th', 'cl', 1, 0, 0, 90);
+INSERT INTO `visa` VALUES('th', 'ec', 1, 0, 0, 90);
+INSERT INTO `visa` VALUES('th', 'xk', 1, 1, 1, 90);
+INSERT INTO `visa` VALUES('th', 'fj', 1, 0, 0, 120);
+INSERT INTO `visa` VALUES('th', 'ge', 1, 0, 0, 360);
+INSERT INTO `visa` VALUES('th', 'ke', 1, 1, 1, 90);
+INSERT INTO `visa` VALUES('th', 'pa', 1, 1, 1, 90);
+INSERT INTO `visa` VALUES('th', 'pe', 1, 0, 0, 90);
+INSERT INTO `visa` VALUES('th', 'mg', 1, 1, 1, 90);
+INSERT INTO `visa` VALUES('th', 'np', 1, 1, 1, 90);
+INSERT INTO `visa` VALUES('th', 'sb', 1, 0, 0, 90);
+INSERT INTO `visa` VALUES('th', 'bo', 1, 1, 1, 90);
+INSERT INTO `visa` VALUES('th', 'tz', 1, 1, 1, 90);
+INSERT INTO `visa` VALUES('th', 'zm', 1, 1, 1, 90);
