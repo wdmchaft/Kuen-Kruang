@@ -14,6 +14,10 @@
 		800D08D4143EC34800529D3F /* tips.png in Resources */ = {isa = PBXBuildFile; fileRef = 800D08CE143EC34800529D3F /* tips.png */; };
 		800D08D5143EC34800529D3F /* tips@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 800D08CF143EC34800529D3F /* tips@2x.png */; };
 		801D4D89143F4999005C0F5D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 801D4D88143F4999005C0F5D /* CoreData.framework */; };
+		8040782C1448AEB0006F8A40 /* More.m in Sources */ = {isa = PBXBuildFile; fileRef = 8040782A1448AEB0006F8A40 /* More.m */; };
+		8040782D1448AEB0006F8A40 /* More.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8040782B1448AEB0006F8A40 /* More.xib */; };
+		804078371448B49B006F8A40 /* About.m in Sources */ = {isa = PBXBuildFile; fileRef = 804078351448B49B006F8A40 /* About.m */; };
+		804078381448B49B006F8A40 /* About.xib in Resources */ = {isa = PBXBuildFile; fileRef = 804078361448B49B006F8A40 /* About.xib */; };
 		804A3C2214488624002FCEDC /* Tips.m in Sources */ = {isa = PBXBuildFile; fileRef = 804A3C2014488624002FCEDC /* Tips.m */; };
 		804A3C2314488624002FCEDC /* Tips.xib in Resources */ = {isa = PBXBuildFile; fileRef = 804A3C2114488624002FCEDC /* Tips.xib */; };
 		806F9FA8143ECE5900AC2A32 /* flight.png in Resources */ = {isa = PBXBuildFile; fileRef = 806F9FA6143ECE5900AC2A32 /* flight.png */; };
@@ -46,6 +50,12 @@
 		800D08CE143EC34800529D3F /* tips.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tips.png; path = ../../img/tips.png; sourceTree = "<group>"; };
 		800D08CF143EC34800529D3F /* tips@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tips@2x.png"; path = "../../img/tips@2x.png"; sourceTree = "<group>"; };
 		801D4D88143F4999005C0F5D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		804078291448AEB0006F8A40 /* More.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = More.h; sourceTree = "<group>"; };
+		8040782A1448AEB0006F8A40 /* More.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = More.m; sourceTree = "<group>"; };
+		8040782B1448AEB0006F8A40 /* More.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = More.xib; sourceTree = "<group>"; };
+		804078341448B49B006F8A40 /* About.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = About.h; sourceTree = "<group>"; };
+		804078351448B49B006F8A40 /* About.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = About.m; sourceTree = "<group>"; };
+		804078361448B49B006F8A40 /* About.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = About.xib; sourceTree = "<group>"; };
 		804A3C1F14488624002FCEDC /* Tips.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tips.h; sourceTree = "<group>"; };
 		804A3C2014488624002FCEDC /* Tips.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tips.m; sourceTree = "<group>"; };
 		804A3C2114488624002FCEDC /* Tips.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Tips.xib; sourceTree = "<group>"; };
@@ -102,6 +112,16 @@
 			name = tips;
 			sourceTree = "<group>";
 		};
+		804078331448B482006F8A40 /* More */ = {
+			isa = PBXGroup;
+			children = (
+				804078341448B49B006F8A40 /* About.h */,
+				804078351448B49B006F8A40 /* About.m */,
+				804078361448B49B006F8A40 /* About.xib */,
+			);
+			name = More;
+			sourceTree = "<group>";
+		};
 		806F9FAB143ECE5F00AC2A32 /* tabbar */ = {
 			isa = PBXGroup;
 			children = (
@@ -151,6 +171,7 @@
 		80F2A0B4143EB3BA007D0D79 /* KeunKruang */ = {
 			isa = PBXGroup;
 			children = (
+				804078331448B482006F8A40 /* More */,
 				80F2A0BD143EB3BA007D0D79 /* KeunKruangAppDelegate.h */,
 				80F2A0BE143EB3BA007D0D79 /* KeunKruangAppDelegate.m */,
 				80F2A0C0143EB3BA007D0D79 /* MainWindow.xib */,
@@ -158,6 +179,9 @@
 				804A3C1F14488624002FCEDC /* Tips.h */,
 				804A3C2014488624002FCEDC /* Tips.m */,
 				804A3C2114488624002FCEDC /* Tips.xib */,
+				804078291448AEB0006F8A40 /* More.h */,
+				8040782A1448AEB0006F8A40 /* More.m */,
+				8040782B1448AEB0006F8A40 /* More.xib */,
 			);
 			path = KeunKruang;
 			sourceTree = "<group>";
@@ -258,6 +282,8 @@
 				80C06AB81448ABFE00169599 /* image3.jpg in Resources */,
 				80C06AB91448ABFE00169599 /* image4.jpg in Resources */,
 				80C06ABA1448ABFE00169599 /* image5.jpg in Resources */,
+				8040782D1448AEB0006F8A40 /* More.xib in Resources */,
+				804078381448B49B006F8A40 /* About.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,6 +297,8 @@
 				80F2A0BB143EB3BA007D0D79 /* main.m in Sources */,
 				80F2A0BF143EB3BA007D0D79 /* KeunKruangAppDelegate.m in Sources */,
 				804A3C2214488624002FCEDC /* Tips.m in Sources */,
+				8040782C1448AEB0006F8A40 /* More.m in Sources */,
+				804078371448B49B006F8A40 /* About.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
