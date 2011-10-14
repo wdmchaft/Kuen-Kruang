@@ -2,28 +2,21 @@
 //  Tips.h
 //  KeunKruang
 //
-//  Created by Napawan Srisuksawad on 10/14/11.
-//  Copyright (c) 2011 Chulalongkorn University. All rights reserved.
+//  Created by Napawan Srisuksawad on 10/7/11.
+//  Copyright 2011 Chulalongkorn University. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-
-@interface Tips : UIViewController
-<UIScrollViewDelegate>
-{
-	IBOutlet UIScrollView* scrollView;
-	IBOutlet UIPageControl* pageControl;
+@interface Tips : UIViewController <UIScrollViewDelegate> {
+    IBOutlet UIScrollView *scrollView;
+	IBOutlet UIPageControl *pageControl;
 	
     BOOL pageControlIsChangingPage;
 }
-@property (nonatomic, retain) UIView *scrollView;
-@property (nonatomic, retain) UIPageControl* pageControl;
+@property (nonatomic, retain) UIScrollView *scrollView;
+@property (nonatomic, retain) UIPageControl *pageControl;
 
-/* for pageControl */
 - (IBAction)changePage:(id)sender;
 
-/* internal */
 - (void)setupPage;
-
 
 @end
