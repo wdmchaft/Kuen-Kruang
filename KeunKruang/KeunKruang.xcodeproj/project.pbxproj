@@ -14,13 +14,13 @@
 		800D08D4143EC34800529D3F /* tips.png in Resources */ = {isa = PBXBuildFile; fileRef = 800D08CE143EC34800529D3F /* tips.png */; };
 		800D08D5143EC34800529D3F /* tips@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 800D08CF143EC34800529D3F /* tips@2x.png */; };
 		801D4D89143F4999005C0F5D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 801D4D88143F4999005C0F5D /* CoreData.framework */; };
-		801D4D8D143F4EA7005C0F5D /* Tips.m in Sources */ = {isa = PBXBuildFile; fileRef = 801D4D8B143F4EA7005C0F5D /* Tips.m */; };
-		801D4D8E143F4EA7005C0F5D /* Tips.xib in Resources */ = {isa = PBXBuildFile; fileRef = 801D4D8C143F4EA7005C0F5D /* Tips.xib */; };
 		801D4D9A143F5654005C0F5D /* image1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 801D4D95143F5654005C0F5D /* image1.jpg */; };
 		801D4D9B143F5654005C0F5D /* image2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 801D4D96143F5654005C0F5D /* image2.jpg */; };
 		801D4D9C143F5654005C0F5D /* image3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 801D4D97143F5654005C0F5D /* image3.jpg */; };
 		801D4D9D143F5654005C0F5D /* image4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 801D4D98143F5654005C0F5D /* image4.jpg */; };
 		801D4D9E143F5654005C0F5D /* image5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 801D4D99143F5654005C0F5D /* image5.jpg */; };
+		804A3C2214488624002FCEDC /* Tips.m in Sources */ = {isa = PBXBuildFile; fileRef = 804A3C2014488624002FCEDC /* Tips.m */; };
+		804A3C2314488624002FCEDC /* Tips.xib in Resources */ = {isa = PBXBuildFile; fileRef = 804A3C2114488624002FCEDC /* Tips.xib */; };
 		806F9FA8143ECE5900AC2A32 /* flight.png in Resources */ = {isa = PBXBuildFile; fileRef = 806F9FA6143ECE5900AC2A32 /* flight.png */; };
 		806F9FA9143ECE5900AC2A32 /* flight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 806F9FA7143ECE5900AC2A32 /* flight@2x.png */; };
 		80F2A0AF143EB3BA007D0D79 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80F2A0AE143EB3BA007D0D79 /* UIKit.framework */; };
@@ -46,14 +46,14 @@
 		800D08CE143EC34800529D3F /* tips.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tips.png; path = ../../img/tips.png; sourceTree = "<group>"; };
 		800D08CF143EC34800529D3F /* tips@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tips@2x.png"; path = "../../img/tips@2x.png"; sourceTree = "<group>"; };
 		801D4D88143F4999005C0F5D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		801D4D8A143F4EA7005C0F5D /* Tips.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tips.h; sourceTree = "<group>"; };
-		801D4D8B143F4EA7005C0F5D /* Tips.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tips.m; sourceTree = "<group>"; };
-		801D4D8C143F4EA7005C0F5D /* Tips.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Tips.xib; sourceTree = "<group>"; };
 		801D4D95143F5654005C0F5D /* image1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = image1.jpg; path = ../../img/image1.jpg; sourceTree = "<group>"; };
 		801D4D96143F5654005C0F5D /* image2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = image2.jpg; path = ../../img/image2.jpg; sourceTree = "<group>"; };
 		801D4D97143F5654005C0F5D /* image3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = image3.jpg; path = ../../img/image3.jpg; sourceTree = "<group>"; };
 		801D4D98143F5654005C0F5D /* image4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = image4.jpg; path = ../../img/image4.jpg; sourceTree = "<group>"; };
 		801D4D99143F5654005C0F5D /* image5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = image5.jpg; path = ../../img/image5.jpg; sourceTree = "<group>"; };
+		804A3C1F14488624002FCEDC /* Tips.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tips.h; sourceTree = "<group>"; };
+		804A3C2014488624002FCEDC /* Tips.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tips.m; sourceTree = "<group>"; };
+		804A3C2114488624002FCEDC /* Tips.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Tips.xib; sourceTree = "<group>"; };
 		806F9FA6143ECE5900AC2A32 /* flight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = flight.png; path = ../../img/flight.png; sourceTree = "<group>"; };
 		806F9FA7143ECE5900AC2A32 /* flight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "flight@2x.png"; path = "../../img/flight@2x.png"; sourceTree = "<group>"; };
 		80F2A0AA143EB3BA007D0D79 /* KeunKruang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KeunKruang.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -155,9 +155,9 @@
 				80F2A0BE143EB3BA007D0D79 /* KeunKruangAppDelegate.m */,
 				80F2A0C0143EB3BA007D0D79 /* MainWindow.xib */,
 				80F2A0B5143EB3BA007D0D79 /* Supporting Files */,
-				801D4D8A143F4EA7005C0F5D /* Tips.h */,
-				801D4D8B143F4EA7005C0F5D /* Tips.m */,
-				801D4D8C143F4EA7005C0F5D /* Tips.xib */,
+				804A3C1F14488624002FCEDC /* Tips.h */,
+				804A3C2014488624002FCEDC /* Tips.m */,
+				804A3C2114488624002FCEDC /* Tips.xib */,
 			);
 			path = KeunKruang;
 			sourceTree = "<group>";
@@ -252,12 +252,12 @@
 				800D08D5143EC34800529D3F /* tips@2x.png in Resources */,
 				806F9FA8143ECE5900AC2A32 /* flight.png in Resources */,
 				806F9FA9143ECE5900AC2A32 /* flight@2x.png in Resources */,
-				801D4D8E143F4EA7005C0F5D /* Tips.xib in Resources */,
 				801D4D9A143F5654005C0F5D /* image1.jpg in Resources */,
 				801D4D9B143F5654005C0F5D /* image2.jpg in Resources */,
 				801D4D9C143F5654005C0F5D /* image3.jpg in Resources */,
 				801D4D9D143F5654005C0F5D /* image4.jpg in Resources */,
 				801D4D9E143F5654005C0F5D /* image5.jpg in Resources */,
+				804A3C2314488624002FCEDC /* Tips.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,7 +270,7 @@
 			files = (
 				80F2A0BB143EB3BA007D0D79 /* main.m in Sources */,
 				80F2A0BF143EB3BA007D0D79 /* KeunKruangAppDelegate.m in Sources */,
-				801D4D8D143F4EA7005C0F5D /* Tips.m in Sources */,
+				804A3C2214488624002FCEDC /* Tips.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
