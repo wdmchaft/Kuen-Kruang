@@ -350,7 +350,7 @@
 				GCC_PREFIX_HEADER = "KeunKruang/KeunKruang-Prefix.pch";
 				INFOPLIST_FILE = "KeunKruang/KeunKruang-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos4.3;
+				SDKROOT = iphoneos5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -367,7 +367,7 @@
 				GCC_PREFIX_HEADER = "KeunKruang/KeunKruang-Prefix.pch";
 				INFOPLIST_FILE = "KeunKruang/KeunKruang-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos4.3;
+				SDKROOT = iphoneos5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
