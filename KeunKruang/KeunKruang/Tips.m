@@ -2,8 +2,8 @@
 //  Tips.m
 //  KeunKruang
 //
-//  Created by Napawan Srisuksawad on 10/7/11.
-//  Copyright 2011 Chulalongkorn University. All rights reserved.
+//  Created by Napawan Srisuksawad on 10/14/11.
+//  Copyright (c) 2011 Chulalongkorn University. All rights reserved.
 //
 
 #import "Tips.h"
@@ -36,22 +36,25 @@
     [self setupPage];
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    
 }
 
 - (void)viewDidUnload
 {
+    [scrollView release];
+	[pageControl release];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
-	[scrollView release];
-	[pageControl release];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+- (void)dealloc 
+{
+    [super dealloc];
 }
 
 #pragma mark -
@@ -135,6 +138,5 @@
 	 */
     pageControlIsChangingPage = YES;
 }
-
 
 @end
