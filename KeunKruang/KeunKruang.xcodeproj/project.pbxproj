@@ -25,6 +25,8 @@
 		804C74321449855600251269 /* tips@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 804C742A1449855600251269 /* tips@2x.png */; };
 		804C743B14498FFE00251269 /* More.m in Sources */ = {isa = PBXBuildFile; fileRef = 804C743914498FFE00251269 /* More.m */; };
 		804C743C14498FFE00251269 /* More.xib in Resources */ = {isa = PBXBuildFile; fileRef = 804C743A14498FFE00251269 /* More.xib */; };
+		807F2FB2144A033D008EF06A /* Weather.m in Sources */ = {isa = PBXBuildFile; fileRef = 807F2FB0144A033D008EF06A /* Weather.m */; };
+		807F2FB3144A033D008EF06A /* Weather.xib in Resources */ = {isa = PBXBuildFile; fileRef = 807F2FB1144A033D008EF06A /* Weather.xib */; };
 		809A63AD144984EA006AFFFB /* pouhnmk_logo_white.png in Resources */ = {isa = PBXBuildFile; fileRef = 809A63AB144984EA006AFFFB /* pouhnmk_logo_white.png */; };
 		80C06AB61448ABFE00169599 /* image1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 80C06AB11448ABFE00169599 /* image1.jpg */; };
 		80C06AB71448ABFE00169599 /* image2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 80C06AB21448ABFE00169599 /* image2.jpg */; };
@@ -69,6 +71,9 @@
 		804C743814498FFE00251269 /* More.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = More.h; sourceTree = "<group>"; };
 		804C743914498FFE00251269 /* More.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = More.m; sourceTree = "<group>"; };
 		804C743A14498FFE00251269 /* More.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = More.xib; sourceTree = "<group>"; };
+		807F2FAF144A033D008EF06A /* Weather.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Weather.h; sourceTree = "<group>"; };
+		807F2FB0144A033D008EF06A /* Weather.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Weather.m; sourceTree = "<group>"; };
+		807F2FB1144A033D008EF06A /* Weather.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Weather.xib; sourceTree = "<group>"; };
 		809A63AB144984EA006AFFFB /* pouhnmk_logo_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pouhnmk_logo_white.png; sourceTree = "<group>"; };
 		80C06AB11448ABFE00169599 /* image1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = image1.jpg; path = ../../../Downloads/Scrolling/image1.jpg; sourceTree = "<group>"; };
 		80C06AB21448ABFE00169599 /* image2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = image2.jpg; path = ../../../Downloads/Scrolling/image2.jpg; sourceTree = "<group>"; };
@@ -133,6 +138,9 @@
 				800597301449F43C00302B9B /* Currency.h */,
 				800597311449F43C00302B9B /* Currency.m */,
 				800597321449F43C00302B9B /* Currency.xib */,
+				807F2FAF144A033D008EF06A /* Weather.h */,
+				807F2FB0144A033D008EF06A /* Weather.m */,
+				807F2FB1144A033D008EF06A /* Weather.xib */,
 			);
 			name = More;
 			sourceTree = "<group>";
@@ -301,6 +309,7 @@
 				804C743C14498FFE00251269 /* More.xib in Resources */,
 				8005972F1449F24100302B9B /* nectec_logo.jpg in Resources */,
 				800597341449F43C00302B9B /* Currency.xib in Resources */,
+				807F2FB3144A033D008EF06A /* Weather.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,6 +326,7 @@
 				804078371448B49B006F8A40 /* About.m in Sources */,
 				804C743B14498FFE00251269 /* More.m in Sources */,
 				800597331449F43C00302B9B /* Currency.m in Sources */,
+				807F2FB2144A033D008EF06A /* Weather.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

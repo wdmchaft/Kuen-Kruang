@@ -10,7 +10,7 @@
 
 @implementation More
 @synthesize arryData;
-@synthesize currvc,aboutvc;
+@synthesize currvc,weavc,aboutvc;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -41,12 +41,14 @@
 {
     [aboutvc release];
     [currvc release];
+    [weavc release];
     [arryData release];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
     self.aboutvc=nil;
     self.currvc=nil;
+    self.weavc=nil;
     self.arryData=nil;
 }
 
@@ -171,6 +173,15 @@
             [curr release];	
         }
         [self.navigationController pushViewController:self.currvc animated:YES];
+	}
+    if (indexPath.row == 1) {
+        if(self.weavc == nil) {
+            Weather *wea =
+            [[Weather alloc] initWithNibName:@"Weather" bundle:[NSBundle mainBundle]];
+            self.weavc = wea;
+            [wea release];	
+        }
+        [self.navigationController pushViewController:self.weavc animated:YES];
 	}
     if (indexPath.row == 4) {
         if(self.aboutvc == nil) {
