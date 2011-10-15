@@ -1,15 +1,15 @@
 //
-//  About.m
+//  Currency.m
 //  KeunKruang
 //
-//  Created by Napawan Srisuksawad on 10/15/11.
+//  Created by Napawan Srisuksawad on 10/16/11.
 //  Copyright (c) 2011 Chulalongkorn University. All rights reserved.
 //
 
-#import "About.h"
+#import "Currency.h"
 
-@implementation About
-
+@implementation Currency
+@synthesize webView;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -31,21 +31,30 @@
 
 - (void)viewDidLoad
 {
-    [AboutTextSV setScrollEnabled:YES];
-    [AboutTextSV setContentSize:CGSizeMake(320, 1750)];
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.navigationItem.title=@"เกี่ยวกับโปรแกรม";
+    self.navigationItem.title=@"อัตราแลกเปลี่ยน";
+    NSString *urlAddress=@"http://www.bangkokbank.com/_layouts/NR/BangkokBankThaiWebApps/WebApp%20Currency%20Exchange%20Thai2/user_conversion_popup.asp";
+    
+    //Create a URL object.
+    NSURL *url = [NSURL URLWithString:urlAddress];
+    
+    //URL Requst Object
+    NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
+    
+    //Load the request in the UIWebView.
+    [webView loadRequest:requestObj];
+    webView.scalesPageToFit=YES;
 }
 
 - (void)viewDidUnload
 {
-    [AboutTextSV release];
+    [webView release];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
-    AboutTextSV = nil;
     self.navigationItem.title=@"อื่นๆ";
+    webView=nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

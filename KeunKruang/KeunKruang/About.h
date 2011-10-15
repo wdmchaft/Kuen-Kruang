@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface About : UIViewController
+@interface About : UIViewController{
+    IBOutlet UIScrollView *AboutTextSV;
+}
 
 @end
