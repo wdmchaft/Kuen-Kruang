@@ -40,11 +40,13 @@
 
 - (void)viewDidUnload
 {
-    [scrollView release];
-	[pageControl release];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
+    [scrollView release];
+	[pageControl release];
+    self.scrollView=nil;
+    self.pageControl=nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -54,6 +56,8 @@
 }
 - (void)dealloc 
 {
+    [scrollView release];
+	[pageControl release];
     [super dealloc];
 }
 

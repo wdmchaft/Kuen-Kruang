@@ -56,7 +56,10 @@
     self.navigationItem.title=@"อื่นๆ";
     self.webView=nil;
 }
-
+- (void) dealloc
+{
+    [super dealloc];
+}
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations

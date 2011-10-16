@@ -39,10 +39,6 @@
 
 - (void)viewDidUnload
 {
-    [aboutvc release];
-    [currvc release];
-    [weavc release];
-    [arryData release];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -50,6 +46,14 @@
     self.currvc=nil;
     self.weavc=nil;
     self.arryData=nil;
+    [aboutvc release];
+    [currvc release];
+    [weavc release];
+    [arryData release];
+}
+-(void)dealloc
+{
+    [super dealloc];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -192,5 +196,13 @@
         }
         [self.navigationController pushViewController:self.aboutvc animated:YES];
 	}
+    [aboutvc release];
+    [currvc release];
+    [weavc release];
+    [arryData release];
+    aboutvc=nil;
+    currvc=nil;
+    weavc=nil;
+    arryData=nil;
 }
 @end

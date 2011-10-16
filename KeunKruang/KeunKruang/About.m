@@ -40,14 +40,17 @@
 
 - (void)viewDidUnload
 {
-    [AboutTextSV release];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
     AboutTextSV = nil;
     self.navigationItem.title=@"อื่นๆ";
+    [AboutTextSV release];
 }
-
+- (void) dealloc
+{
+    [super dealloc];
+}
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations
