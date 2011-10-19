@@ -10,7 +10,12 @@
 		8005972F1449F24100302B9B /* nectec_logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8005972E1449F24100302B9B /* nectec_logo.jpg */; };
 		800597331449F43C00302B9B /* Currency.m in Sources */ = {isa = PBXBuildFile; fileRef = 800597311449F43C00302B9B /* Currency.m */; };
 		800597341449F43C00302B9B /* Currency.xib in Resources */ = {isa = PBXBuildFile; fileRef = 800597321449F43C00302B9B /* Currency.xib */; };
-		801D4D89143F4999005C0F5D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 801D4D88143F4999005C0F5D /* CoreData.framework */; };
+		800E160D144F276A00571CBD /* KeunKruang.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 800E160C144F276A00571CBD /* KeunKruang.sqlite */; };
+		800E1610144F279F00571CBD /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 800E160F144F279F00571CBD /* libsqlite3.0.dylib */; };
+		800E1613144F27CF00571CBD /* Passport.m in Sources */ = {isa = PBXBuildFile; fileRef = 800E1612144F27CF00571CBD /* Passport.m */; };
+		800E161C144F2EEB00571CBD /* Passport_view.m in Sources */ = {isa = PBXBuildFile; fileRef = 800E161A144F2EEB00571CBD /* Passport_view.m */; };
+		800E161D144F2EEB00571CBD /* Passport_view.xib in Resources */ = {isa = PBXBuildFile; fileRef = 800E161B144F2EEB00571CBD /* Passport_view.xib */; };
+		800E1620144F312700571CBD /* PassportViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 800E161F144F312700571CBD /* PassportViewCell.m */; };
 		804078371448B49B006F8A40 /* About.m in Sources */ = {isa = PBXBuildFile; fileRef = 804078351448B49B006F8A40 /* About.m */; };
 		804078381448B49B006F8A40 /* About.xib in Resources */ = {isa = PBXBuildFile; fileRef = 804078361448B49B006F8A40 /* About.xib */; };
 		804A3C2214488624002FCEDC /* Tips.m in Sources */ = {isa = PBXBuildFile; fileRef = 804A3C2014488624002FCEDC /* Tips.m */; };
@@ -53,7 +58,15 @@
 		800597301449F43C00302B9B /* Currency.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Currency.h; sourceTree = "<group>"; };
 		800597311449F43C00302B9B /* Currency.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Currency.m; sourceTree = "<group>"; };
 		800597321449F43C00302B9B /* Currency.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Currency.xib; sourceTree = "<group>"; };
-		801D4D88143F4999005C0F5D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		800E160C144F276A00571CBD /* KeunKruang.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = KeunKruang.sqlite; sourceTree = "<group>"; };
+		800E160F144F279F00571CBD /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		800E1611144F27CF00571CBD /* Passport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Passport.h; sourceTree = "<group>"; };
+		800E1612144F27CF00571CBD /* Passport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Passport.m; sourceTree = "<group>"; };
+		800E1619144F2EEB00571CBD /* Passport_view.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Passport_view.h; sourceTree = "<group>"; };
+		800E161A144F2EEB00571CBD /* Passport_view.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Passport_view.m; sourceTree = "<group>"; };
+		800E161B144F2EEB00571CBD /* Passport_view.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Passport_view.xib; sourceTree = "<group>"; };
+		800E161E144F312700571CBD /* PassportViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PassportViewCell.h; sourceTree = "<group>"; };
+		800E161F144F312700571CBD /* PassportViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PassportViewCell.m; sourceTree = "<group>"; };
 		804078341448B49B006F8A40 /* About.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = About.h; sourceTree = "<group>"; };
 		804078351448B49B006F8A40 /* About.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = About.m; sourceTree = "<group>"; };
 		804078361448B49B006F8A40 /* About.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = About.xib; sourceTree = "<group>"; };
@@ -104,16 +117,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				800E1610144F279F00571CBD /* libsqlite3.0.dylib in Frameworks */,
 				80C06AC11448AC8200169599 /* CoreGraphics.framework in Frameworks */,
 				80C06ABF1448AC7C00169599 /* Foundation.framework in Frameworks */,
 				80C06ABD1448AC7600169599 /* UIKit.framework in Frameworks */,
-				801D4D89143F4999005C0F5D /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		800E1626144F37EC00571CBD /* Passport */ = {
+			isa = PBXGroup;
+			children = (
+				800E1611144F27CF00571CBD /* Passport.h */,
+				800E1612144F27CF00571CBD /* Passport.m */,
+				800E1619144F2EEB00571CBD /* Passport_view.h */,
+				800E161A144F2EEB00571CBD /* Passport_view.m */,
+				800E161B144F2EEB00571CBD /* Passport_view.xib */,
+				800E161E144F312700571CBD /* PassportViewCell.h */,
+				800E161F144F312700571CBD /* PassportViewCell.m */,
+			);
+			name = Passport;
+			sourceTree = "<group>";
+		};
 		801D4D94143F563E005C0F5D /* tips */ = {
 			isa = PBXGroup;
 			children = (
@@ -163,6 +190,7 @@
 		80F2A09F143EB3BA007D0D79 = {
 			isa = PBXGroup;
 			children = (
+				800E160F144F279F00571CBD /* libsqlite3.0.dylib */,
 				80F2A0DF143EB428007D0D79 /* Default@2x.png */,
 				80F2A0DD143EB421007D0D79 /* Default.png */,
 				80F2A0D4143EB410007D0D79 /* img */,
@@ -183,7 +211,6 @@
 		80F2A0AD143EB3BA007D0D79 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				801D4D88143F4999005C0F5D /* CoreData.framework */,
 				80C06AC01448AC8200169599 /* CoreGraphics.framework */,
 				80C06ABE1448AC7C00169599 /* Foundation.framework */,
 				80C06ABC1448AC7600169599 /* UIKit.framework */,
@@ -194,6 +221,8 @@
 		80F2A0B4143EB3BA007D0D79 /* KeunKruang */ = {
 			isa = PBXGroup;
 			children = (
+				800E1626144F37EC00571CBD /* Passport */,
+				800E160C144F276A00571CBD /* KeunKruang.sqlite */,
 				804078331448B482006F8A40 /* More */,
 				80F2A0BD143EB3BA007D0D79 /* KeunKruangAppDelegate.h */,
 				80F2A0BE143EB3BA007D0D79 /* KeunKruangAppDelegate.m */,
@@ -311,6 +340,8 @@
 				8005972F1449F24100302B9B /* nectec_logo.jpg in Resources */,
 				800597341449F43C00302B9B /* Currency.xib in Resources */,
 				807F2FB3144A033D008EF06A /* Weather.xib in Resources */,
+				800E160D144F276A00571CBD /* KeunKruang.sqlite in Resources */,
+				800E161D144F2EEB00571CBD /* Passport_view.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,6 +359,9 @@
 				804C743B14498FFE00251269 /* More.m in Sources */,
 				800597331449F43C00302B9B /* Currency.m in Sources */,
 				807F2FB2144A033D008EF06A /* Weather.m in Sources */,
+				800E1613144F27CF00571CBD /* Passport.m in Sources */,
+				800E161C144F2EEB00571CBD /* Passport_view.m in Sources */,
+				800E1620144F312700571CBD /* PassportViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

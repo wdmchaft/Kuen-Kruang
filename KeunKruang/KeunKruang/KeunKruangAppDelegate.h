@@ -7,11 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface KeunKruangAppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate>
+@interface KeunKruangAppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate,UINavigationBarDelegate>{
+    sqlite3 *dbase;
+    NSMutableArray *pp;
+}
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
-
 @property (nonatomic, retain) IBOutlet UITabBarController *tabBarController;
+@property (nonatomic, retain) NSMutableArray *pp;
 
 @end

@@ -8,8 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface Tips : UIViewController
-<UIScrollViewDelegate>
+@interface Tips : UIViewController<UIScrollViewDelegate>
 {
 	IBOutlet UIScrollView* scrollView;
 	IBOutlet UIPageControl* pageControl;
