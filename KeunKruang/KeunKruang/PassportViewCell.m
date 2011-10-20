@@ -10,23 +10,26 @@
 
 @implementation PassportViewCell
 @synthesize ppNo,ppType,ppExpire;
+
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         // Initialization code
-    }
-    return self;
-}
-- (id)initWithFrame:(CGRect)frame reuseIdentifier:(NSString *)reuseIdentifier {
-	if (self = [super initWithFrame:frame reuseIdentifier:reuseIdentifier]) {
-        UIView *myContentView = self.contentView;
-        
-        self.ppNo = [self newLabelWithPrimaryColor:[UIColor blackColor] selectedColor:[UIColor blackColor] fontSize:14.0 bold:YES]; 
-		self.ppNo.textAlignment = UITextAlignmentLeft; // default
-		[myContentView addSubview:self.ppNo];
-		[self.ppNo release];
-        
+        // Create a subview - don't need to specify its position/size
+        ppNo = [[UILabel alloc] initWithFrame:CGRectZero];
+        // Put it on the content view of the cell
+        [[self contentView] addSubview:ppNo];
+        // It is being retained by its superview
+        [ppNo release];
+        // Type
+        ppType = [[UILabel alloc] initWithFrame:CGRectZero];
+        [[self contentView] addSubview:ppType];
+        [ppType release];
+        // Expire
+        ppExpire = [[UILabel alloc] initWithFrame:CGRectZero];
+        [[self contentView] addSubview:ppExpire];
+        [ppExpire release];
     }
     return self;
 }
@@ -39,85 +42,37 @@
 - (void)setPP:(Passport *)newPP
 {
     pp = newPP;
+
+    self.ppNo.text = [NSString stringWithFormat:@"หนังสือเดินทางเลขที่:%@", newPP.no];
+    if(newPP.type==1){
+        self.ppType.text = [NSString stringWithFormat:@"ประเภท:ทั่วไป"];
+    }
+    else{
+        self.ppType.text = [NSString stringWithFormat:@"ประเภท:ราชการ"];
+    }
+   //set text for expire soon
     
-    self.ppNo.text = newPP.no;
-    self.ppType.text = (NSString *)newPP.type;
-	self.ppExpire.text = (NSString *)newPP.expire;
-	
     [self setNeedsDisplay];
 }
 
 
 
 - (void)layoutSubviews {
-    
-#define LEFT_COLUMN_OFFSET 1
-#define LEFT_COLUMN_WIDTH 50
-	
-#define RIGHT_COLUMN_OFFSET 75
-#define RIGHT_COLUMN_WIDTH 240
-	
-#define UPPER_ROW_TOP 4
-    
+    // We always call this, the table view cell needs to do its own work first
     [super layoutSubviews];
-    CGRect contentRect = self.contentView.bounds;
-	
-    if (!self.editing) {
-		
-        CGFloat boundsX = contentRect.origin.x;
-		CGRect frame;
-        
-        // Place the Text label.
-		frame = CGRectMake(boundsX +RIGHT_COLUMN_OFFSET  , UPPER_ROW_TOP, RIGHT_COLUMN_WIDTH, 13);
-		frame.origin.y = 15;
-		self.ppNo.frame = frame;
-        
-        
-    }
+    // We'll use this to add spacing between borders
+    float inset = 5.0;
+    // How much space do we have to work with?
+    CGRect bounds = [[self contentView] bounds];
+    // Let's pull out of the height and width
+    // into easier-to-type variable names
+    float h = bounds.size.height;
+    float w = bounds.size.width;
+    // This will be a constant value for the valueField's width
+    float valueWidth = 20.0;
+    // Create a rectangle in the middle for the name
+    CGRect ppFrame = CGRectMake(inset,inset,w - (h + valueWidth + inset * 4.0),h - inset * 2.0);
+    [ppNo setFrame:ppFrame];
 }
-
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    
-	[super setSelected:selected animated:animated];
-	
-	UIColor *backgroundColor = nil;
-	if (selected) {
-	    backgroundColor = [UIColor clearColor];
-	} else {
-		backgroundColor = [UIColor whiteColor];
-	}
-    
-	self.ppNo.backgroundColor = backgroundColor;
-	self.ppNo.highlighted = selected;
-	self.ppNo.opaque = !selected;
-}
-
-
-- (UILabel *)newLabelWithPrimaryColor:(UIColor *)primaryColor 
-						selectedColor:(UIColor *)selectedColor fontSize:(CGFloat)fontSize bold:(BOOL)bold
-{
-    
-    UIFont *font;
-    if (bold) {
-        font = [UIFont boldSystemFontOfSize:fontSize];
-    } else {
-        font = [UIFont systemFontOfSize:fontSize];
-    }
-    
-	UILabel *newLabel = [[UILabel alloc] initWithFrame:CGRectZero];
-	newLabel.backgroundColor = [UIColor whiteColor];
-	newLabel.opaque = YES;
-	newLabel.textColor = primaryColor;
-	newLabel.highlightedTextColor = selectedColor;
-	newLabel.font = font;
-	
-	return newLabel;
-}
-
-- (void)dealloc {
-	[super dealloc];
-}
-
 
 @end

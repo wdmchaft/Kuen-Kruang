@@ -96,11 +96,13 @@
 {
     static NSString *MyIdentifier = @"MyIdentifier";
 	
-	PassportViewCell *cell = (PassportViewCell *)[tableView dequeueReusableCellWithIdentifier:MyIdentifier];
-	if (cell == nil) {
-		cell = [[[PassportViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:MyIdentifier] autorelease];
-	}
-	
+	PassportViewCell *cell = (PassportViewCell *)[tableView
+                                                    dequeueReusableCellWithIdentifier:@"PassportViewCell"];
+    if (!cell) {
+        cell = [[[PassportViewCell alloc]
+                 initWithStyle:UITableViewCellStyleDefault
+                 reuseIdentifier:@"PassportViewCell"] autorelease];
+    }    
 	KeunKruangAppDelegate *appDelegate = (KeunKruangAppDelegate *)[[UIApplication sharedApplication] delegate];
 	Passport *pp1 = [appDelegate.pp objectAtIndex:indexPath.row];
 	
@@ -108,7 +110,8 @@
 	
 	// Set up the cell
     [cell setAccessoryType:UITableViewCellAccessoryDetailDisclosureButton];
-	return cell;}
+	return cell;
+}
 
 /*
 // Override to support conditional editing of the table view.

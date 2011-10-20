@@ -14,7 +14,7 @@
     NSInteger primaryKey;
     NSInteger type;
     NSDate *expire;
-}
+   }
 
 @property(nonatomic,assign,readonly) NSInteger primaryKey;
 @property(nonatomic,retain) NSString *no;

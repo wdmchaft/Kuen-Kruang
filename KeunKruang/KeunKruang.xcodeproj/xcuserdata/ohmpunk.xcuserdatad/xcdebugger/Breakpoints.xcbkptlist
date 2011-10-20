@@ -22,27 +22,27 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          isPathRelative = "1"
-         filePath = "KeunKruang/Passport.m"
-         timestampString = "340733881.724056"
+         filePath = "KeunKruang/PassportViewCell.m"
+         timestampString = "340817233.076435"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "13"
-         endingLineNumber = "13"
-         landmarkName = "@implementation Passport"
-         landmarkType = "3">
+         startingLineNumber = "14"
+         endingLineNumber = "14"
+         landmarkName = "-initWithStyle:reuseIdentifier:"
+         landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          isPathRelative = "1"
-         filePath = "KeunKruang/PassportViewCell.m"
-         timestampString = "340735965.177584"
+         filePath = "KeunKruang/Passport.m"
+         timestampString = "340814477.434848"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "41"
-         endingLineNumber = "41"
-         landmarkName = "-setPP:"
+         startingLineNumber = "16"
+         endingLineNumber = "16"
+         landmarkName = "-initWithPK:db:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
