@@ -18,12 +18,14 @@
         // Initialization code
         // Create a subview - don't need to specify its position/size
         ppNo = [[UILabel alloc] initWithFrame:CGRectZero];
+        [ppNo setFont:[UIFont boldSystemFontOfSize:19]];
         // Put it on the content view of the cell
         [[self contentView] addSubview:ppNo];
         // It is being retained by its superview
         [ppNo release];
         // Type
         ppType = [[UILabel alloc] initWithFrame:CGRectZero];
+        
         [[self contentView] addSubview:ppType];
         [ppType release];
         // Expire
@@ -43,15 +45,15 @@
 {
     pp = newPP;
 
-    self.ppNo.text = [NSString stringWithFormat:@"หนังสือเดินทางเลขที่:%@", newPP.no];
+    self.ppNo.text = [NSString stringWithFormat:@"หนังสือเดินทาง %@", newPP.no];
     if(newPP.type==1){
-        self.ppType.text = [NSString stringWithFormat:@"ประเภท:ทั่วไป"];
+        self.ppType.text = [NSString stringWithFormat:@"ประเภททั่วไป"];
     }
     else{
-        self.ppType.text = [NSString stringWithFormat:@"ประเภท:ราชการ"];
+        self.ppType.text = [NSString stringWithFormat:@"ประเภทราชการ"];
     }
-   //set text for expire soon
-    
+    //binding soon
+    self.ppExpire.text = [NSString stringWithFormat:@"หมดอายุ "];
     [self setNeedsDisplay];
 }
 
@@ -69,10 +71,17 @@
     float h = bounds.size.height;
     float w = bounds.size.width;
     // This will be a constant value for the valueField's width
-    float valueWidth = 20.0;
+    float valueWidth = 5.0;
+    //Passport Type
+    CGRect ppTFrame = CGRectMake(inset,22,w - (h + valueWidth + inset * 2.0)-130,h - inset * 4.5);
+    [ppType setFrame:ppTFrame];
+    //Passport Expire
+    CGRect ppEFrame = CGRectMake(inset+w - (h + valueWidth + inset * 2.0)-130,22,w - (h + valueWidth + inset * 2.0),h - inset * 4.5);
+    [ppExpire setFrame:ppEFrame];
     // Create a rectangle in the middle for the name
-    CGRect ppFrame = CGRectMake(inset,inset,w - (h + valueWidth + inset * 4.0),h - inset * 2.0);
-    [ppNo setFrame:ppFrame];
+    CGRect ppNFrame = CGRectMake(inset,inset-10,w - (h + valueWidth + inset * 4.0),h - inset * 2.0);
+    [ppNo setFrame:ppNFrame];
+    
 }
 
 @end

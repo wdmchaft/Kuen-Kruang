@@ -20,7 +20,6 @@
     }
     return self;
 }
-
 - (void)didReceiveMemoryWarning
 {
     // Releases the view if it doesn't have a superview.
@@ -39,9 +38,15 @@
     // self.clearsSelectionOnViewWillAppear = NO;
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    UIBarButtonItem *add = [[UIBarButtonItem alloc]
+                            initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
+                            target:self
+                            action:nil];
+    [[self navigationItem] setRightBarButtonItem:add];
+    [add release];
+    self.navigationItem.leftBarButtonItem=self.editButtonItem;
 }
-
 - (void)viewDidUnload
 {
     [super viewDidUnload];
@@ -74,7 +79,6 @@
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
-
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
