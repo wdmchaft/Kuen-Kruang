@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Reachability.h"
 #import "About.h"
 #import "Currency.h"
 #import "Weather.h"

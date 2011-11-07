@@ -30,6 +30,8 @@
 		804C74321449855600251269 /* tips@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 804C742A1449855600251269 /* tips@2x.png */; };
 		804C743B14498FFE00251269 /* More.m in Sources */ = {isa = PBXBuildFile; fileRef = 804C743914498FFE00251269 /* More.m */; };
 		804C743C14498FFE00251269 /* More.xib in Resources */ = {isa = PBXBuildFile; fileRef = 804C743A14498FFE00251269 /* More.xib */; };
+		8052A86F1468340300254242 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8052A86E1468340300254242 /* SystemConfiguration.framework */; };
+		8052A8731468347200254242 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 8052A8721468347200254242 /* Reachability.m */; };
 		807F2FB2144A033D008EF06A /* Weather.m in Sources */ = {isa = PBXBuildFile; fileRef = 807F2FB0144A033D008EF06A /* Weather.m */; };
 		807F2FB3144A033D008EF06A /* Weather.xib in Resources */ = {isa = PBXBuildFile; fileRef = 807F2FB1144A033D008EF06A /* Weather.xib */; };
 		809A63AD144984EA006AFFFB /* pouhnmk_logo_white.png in Resources */ = {isa = PBXBuildFile; fileRef = 809A63AB144984EA006AFFFB /* pouhnmk_logo_white.png */; };
@@ -84,6 +86,9 @@
 		804C743814498FFE00251269 /* More.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = More.h; sourceTree = "<group>"; };
 		804C743914498FFE00251269 /* More.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = More.m; sourceTree = "<group>"; };
 		804C743A14498FFE00251269 /* More.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = More.xib; sourceTree = "<group>"; };
+		8052A86E1468340300254242 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		8052A8711468347200254242 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		8052A8721468347200254242 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		807F2FAF144A033D008EF06A /* Weather.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Weather.h; sourceTree = "<group>"; };
 		807F2FB0144A033D008EF06A /* Weather.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Weather.m; sourceTree = "<group>"; };
 		807F2FB1144A033D008EF06A /* Weather.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Weather.xib; sourceTree = "<group>"; };
@@ -117,6 +122,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8052A86F1468340300254242 /* SystemConfiguration.framework in Frameworks */,
 				800E1610144F279F00571CBD /* libsqlite3.0.dylib in Frameworks */,
 				80C06AC11448AC8200169599 /* CoreGraphics.framework in Frameworks */,
 				80C06ABF1448AC7C00169599 /* Foundation.framework in Frameworks */,
@@ -190,6 +196,7 @@
 		80F2A09F143EB3BA007D0D79 = {
 			isa = PBXGroup;
 			children = (
+				8052A86E1468340300254242 /* SystemConfiguration.framework */,
 				800E160F144F279F00571CBD /* libsqlite3.0.dylib */,
 				80F2A0DF143EB428007D0D79 /* Default@2x.png */,
 				80F2A0DD143EB421007D0D79 /* Default.png */,
@@ -221,6 +228,8 @@
 		80F2A0B4143EB3BA007D0D79 /* KeunKruang */ = {
 			isa = PBXGroup;
 			children = (
+				8052A8711468347200254242 /* Reachability.h */,
+				8052A8721468347200254242 /* Reachability.m */,
 				800E1626144F37EC00571CBD /* Passport */,
 				800E160C144F276A00571CBD /* KeunKruang.sqlite */,
 				804078331448B482006F8A40 /* More */,
@@ -362,6 +371,7 @@
 				800E1613144F27CF00571CBD /* Passport.m in Sources */,
 				800E161C144F2EEB00571CBD /* Passport_view.m in Sources */,
 				800E1620144F312700571CBD /* PassportViewCell.m in Sources */,
+				8052A8731468347200254242 /* Reachability.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

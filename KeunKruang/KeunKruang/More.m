@@ -161,6 +161,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    Reachability *r = [Reachability reachabilityWithHostName:@"www.apple.com"];
+    NetworkStatus internetStatus = [r currentReachabilityStatus];
+    
     // Navigation logic may go here. Create and push another view controller.
     /*
      <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
@@ -170,22 +173,36 @@
      [detailViewController release];
      */
     if (indexPath.row == 0) {
-        if(self.currvc == nil) {
-            Currency *curr =
-            [[Currency alloc] initWithNibName:@"Currency" bundle:[NSBundle mainBundle]];
-            self.currvc = curr;
-            [curr release];	
+        if ((internetStatus != ReachableViaWiFi) && (internetStatus != ReachableViaWWAN)) {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"เกิดข้อผิดพลาด" message:@"กรุณาเชื่อมต่อกับเครือข่ายอินเตอร์เน็ต" delegate:self cancelButtonTitle:nil otherButtonTitles:@"ตกลง", nil];
+            [alert show];
+            [alert release];
         }
-        [self.navigationController pushViewController:self.currvc animated:YES];
+        else{
+            if(self.currvc == nil) {
+                Currency *curr =
+                [[Currency alloc] initWithNibName:@"Currency" bundle:[NSBundle mainBundle]];
+                self.currvc = curr;
+                [curr release];	
+            }
+            [self.navigationController pushViewController:self.currvc animated:YES];
+        }
 	}
     if (indexPath.row == 1) {
-        if(self.weavc == nil) {
-            Weather *wea =
-            [[Weather alloc] initWithNibName:@"Weather" bundle:[NSBundle mainBundle]];
-            self.weavc = wea;
-            [wea release];	
+        if ((internetStatus != ReachableViaWiFi) && (internetStatus != ReachableViaWWAN)) {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"เกิดข้อผิดพลาด" message:@"กรุณาเชื่อมต่อกับเครือข่ายอินเตอร์เน็ต" delegate:self cancelButtonTitle:nil otherButtonTitles:@"ตกลง", nil];
+            [alert show];
+            [alert release];
         }
-        [self.navigationController pushViewController:self.weavc animated:YES];
+        else{
+            if(self.weavc == nil) {
+                Weather *wea =
+                [[Weather alloc] initWithNibName:@"Weather" bundle:[NSBundle mainBundle]];
+                self.weavc = wea;
+                [wea release];	
+            }
+            [self.navigationController pushViewController:self.weavc animated:YES];
+        }
 	}
     if (indexPath.row == 4) {
         if(self.aboutvc == nil) {

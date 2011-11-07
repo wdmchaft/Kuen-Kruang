@@ -43,7 +43,7 @@
     NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
     
     //Load the request in the UIWebView.
-    [webView loadRequest:requestObj];
+    [webView loadRequest:requestObj];    
     webView.scalesPageToFit=YES;
 }
 
@@ -65,5 +65,4 @@
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
-
 @end

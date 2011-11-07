@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "Reachability.h"
 @interface Currency : UIViewController{
     IBOutlet UIWebView *webView;
 }
 @property (nonatomic, retain) UIWebView *webView;
+
 @end
