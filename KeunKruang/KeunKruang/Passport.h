@@ -13,13 +13,13 @@
     NSString *no;
     NSInteger primaryKey;
     NSInteger type;
-    NSString *expire;
+    NSDate *expire;
 }
 
 @property(nonatomic,assign,readonly) NSInteger primaryKey;
 @property(nonatomic,retain) NSString *no;
 @property(nonatomic) NSInteger type;
-@property(nonatomic,retain) NSString *expire;
+@property(nonatomic,retain) NSDate *expire;
 
 -(id)initWithPK:(NSInteger)pk db:(sqlite3 *)db;
 

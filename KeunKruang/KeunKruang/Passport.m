@@ -25,10 +25,22 @@ static sqlite3_stmt *init_statement = nil;
         }
         sqlite3_bind_int(init_statement,1,primaryKey);
         if(sqlite3_step(init_statement)==SQLITE_ROW){
+            //no
             self.no = [NSString stringWithUTF8String:(char *)sqlite3_column_text(init_statement, 1)];
+            //type
             self.type = sqlite3_column_int(init_statement, 2);
-            //binding for expire soon
-         
+            //expire
+            NSString *expire_str=[NSString stringWithUTF8String:(char *)sqlite3_column_text(init_statement, 3)];
+            NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+            // this is imporant - we set our input date format to match our input string
+            // if format doesn't match you'll get nil from your string, so be careful
+            [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+            NSDate *dateFromString = [[NSDate alloc] init];
+            // voila!
+            dateFromString = [dateFormatter dateFromString:expire_str];
+            [dateFormatter release];
+            self.expire = dateFromString;
+            NSLog(@":%@ %d %@",self.no,self.type,self.expire);
         }
         else{
             self.no=@"Nothing";

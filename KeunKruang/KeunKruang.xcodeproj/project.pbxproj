@@ -30,10 +30,10 @@
 		804C743C14498FFE00251269 /* More.xib in Resources */ = {isa = PBXBuildFile; fileRef = 804C743A14498FFE00251269 /* More.xib */; };
 		8052A86F1468340300254242 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8052A86E1468340300254242 /* SystemConfiguration.framework */; };
 		8052A8731468347200254242 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 8052A8721468347200254242 /* Reachability.m */; };
+		807E752D146D9C8A00925C70 /* KeunKruang.db in Resources */ = {isa = PBXBuildFile; fileRef = 807E752C146D9C8A00925C70 /* KeunKruang.db */; };
 		807F2FB2144A033D008EF06A /* Weather.m in Sources */ = {isa = PBXBuildFile; fileRef = 807F2FB0144A033D008EF06A /* Weather.m */; };
 		807F2FB3144A033D008EF06A /* Weather.xib in Resources */ = {isa = PBXBuildFile; fileRef = 807F2FB1144A033D008EF06A /* Weather.xib */; };
 		809A63AD144984EA006AFFFB /* pouhnmk_logo_white.png in Resources */ = {isa = PBXBuildFile; fileRef = 809A63AB144984EA006AFFFB /* pouhnmk_logo_white.png */; };
-		80B0143E146D1C25000AEAA3 /* KeunKruang.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 80B0143D146D1C25000AEAA3 /* KeunKruang.sqlite */; };
 		80C06AB61448ABFE00169599 /* image1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 80C06AB11448ABFE00169599 /* image1.jpg */; };
 		80C06AB71448ABFE00169599 /* image2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 80C06AB21448ABFE00169599 /* image2.jpg */; };
 		80C06AB81448ABFE00169599 /* image3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 80C06AB31448ABFE00169599 /* image3.jpg */; };
@@ -85,11 +85,11 @@
 		8052A86E1468340300254242 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		8052A8711468347200254242 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		8052A8721468347200254242 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		807E752C146D9C8A00925C70 /* KeunKruang.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = KeunKruang.db; sourceTree = SOURCE_ROOT; };
 		807F2FAF144A033D008EF06A /* Weather.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Weather.h; sourceTree = "<group>"; };
 		807F2FB0144A033D008EF06A /* Weather.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Weather.m; sourceTree = "<group>"; };
 		807F2FB1144A033D008EF06A /* Weather.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Weather.xib; sourceTree = "<group>"; };
 		809A63AB144984EA006AFFFB /* pouhnmk_logo_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pouhnmk_logo_white.png; sourceTree = "<group>"; };
-		80B0143D146D1C25000AEAA3 /* KeunKruang.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = KeunKruang.sqlite; sourceTree = SOURCE_ROOT; };
 		80C06AB11448ABFE00169599 /* image1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = image1.jpg; path = ../../../Downloads/Scrolling/image1.jpg; sourceTree = "<group>"; };
 		80C06AB21448ABFE00169599 /* image2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = image2.jpg; path = ../../../Downloads/Scrolling/image2.jpg; sourceTree = "<group>"; };
 		80C06AB31448ABFE00169599 /* image3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = image3.jpg; path = ../../../Downloads/Scrolling/image3.jpg; sourceTree = "<group>"; };
@@ -223,7 +223,7 @@
 		80F2A0B4143EB3BA007D0D79 /* KeunKruang */ = {
 			isa = PBXGroup;
 			children = (
-				80B0143D146D1C25000AEAA3 /* KeunKruang.sqlite */,
+				807E752C146D9C8A00925C70 /* KeunKruang.db */,
 				8052A8711468347200254242 /* Reachability.h */,
 				8052A8721468347200254242 /* Reachability.m */,
 				800E1626144F37EC00571CBD /* Passport */,
@@ -345,7 +345,7 @@
 				800597341449F43C00302B9B /* Currency.xib in Resources */,
 				807F2FB3144A033D008EF06A /* Weather.xib in Resources */,
 				800E161D144F2EEB00571CBD /* Passport_view.xib in Resources */,
-				80B0143E146D1C25000AEAA3 /* KeunKruang.sqlite in Resources */,
+				807E752D146D9C8A00925C70 /* KeunKruang.db in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

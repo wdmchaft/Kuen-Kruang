@@ -22,20 +22,6 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          isPathRelative = "1"
-         filePath = "KeunKruang/Passport.m"
-         timestampString = "340814477.434848"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "16"
-         endingLineNumber = "16"
-         landmarkName = "-initWithPK:db:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         isPathRelative = "1"
          filePath = "KeunKruang/Currency.m"
          timestampString = "342375572.065476"
          startingColumnNumber = "9223372036854775807"
@@ -43,6 +29,20 @@
          startingLineNumber = "32"
          endingLineNumber = "32"
          landmarkName = "-viewDidLoad"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "KeunKruang/Passport.m"
+         timestampString = "342727231.675337"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "43"
+         endingLineNumber = "43"
+         landmarkName = "-initWithPK:db:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

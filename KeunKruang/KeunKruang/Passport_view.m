@@ -110,13 +110,32 @@
 	Passport *pp1 = [appDelegate.pp objectAtIndex:indexPath.row];
     
 	// Set up the cell
+    NSString *strtype=[NSString alloc];
+    NSString *strexpire=[NSString alloc];
     cell.textLabel.text = [NSString stringWithFormat:@"หนังสือเดินทาง %@", pp1.no];
     if(pp1.type==1){
-        cell.detailTextLabel.text = [NSString stringWithFormat:@"ประเภททั่วไป"];
+        strtype = [NSString stringWithFormat:@"ประเภททั่วไป    "];
     }
     else{
-        cell.detailTextLabel.text = [NSString stringWithFormat:@"ประเภทราชการ"];
+        strtype = [NSString stringWithFormat:@"ประเภทราชการ "];
     }
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"dd-MM-yyyy"];
+    NSString *strDate = [dateFormatter stringFromDate:pp1.expire];
+    [dateFormatter release];
+    strexpire = [NSString stringWithFormat:@"หมดอายุ %@",strDate];
+    UIColor *ok=[UIColor colorWithRed:42.0/255.0 green:86.0/255.0 blue:42.0/255.0 alpha:1];
+    UIColor *warn=[UIColor colorWithRed:158.0/255.0 green:136.0/255.0 blue:56.0/255.0 alpha:1];
+    UIColor *nook=[UIColor colorWithRed:159.0/255.0 green:12.0/255.0 blue:10.0/255.0 alpha:1];
+    NSComparisonResult cmpdate=[pp1.expire compare:[NSDate date]];
+    NSLog(@"%@",[NSDate date]);
+    if(cmpdate==NSOrderedDescending){
+        [cell.detailTextLabel setTextColor:ok];
+    }
+    else{
+        [cell.detailTextLabel setTextColor:nook];
+    }
+    cell.detailTextLabel.text = [strtype stringByAppendingString:strexpire];
     [cell setAccessoryType:UITableViewCellAccessoryDetailDisclosureButton];
 	return cell;
 }
