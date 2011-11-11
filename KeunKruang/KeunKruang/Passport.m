@@ -27,8 +27,8 @@ static sqlite3_stmt *init_statement = nil;
         if(sqlite3_step(init_statement)==SQLITE_ROW){
             self.no = [NSString stringWithUTF8String:(char *)sqlite3_column_text(init_statement, 1)];
             self.type = sqlite3_column_int(init_statement, 2);
-            //binding for expire
-            
+            //binding for expire soon
+         
         }
         else{
             self.no=@"Nothing";

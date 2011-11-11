@@ -8,7 +8,6 @@
 
 #import "Passport_view.h"
 #import "KeunKruangAppDelegate.h"
-#import "PassportViewCell.h"
 
 @implementation Passport_view
 
@@ -98,21 +97,26 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *MyIdentifier = @"MyIdentifier";
-	
-	PassportViewCell *cell = (PassportViewCell *)[tableView
-                                                    dequeueReusableCellWithIdentifier:@"PassportViewCell"];
-    if (!cell) {
-        cell = [[[PassportViewCell alloc]
-                 initWithStyle:UITableViewCellStyleDefault
-                 reuseIdentifier:@"PassportViewCell"] autorelease];
-    }    
+    static NSString *CellIdentifier = @"Cell";
+    
+    UITableViewCell *cell = 
+    [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle 
+                                       reuseIdentifier:CellIdentifier] autorelease];
+    }
+    
 	KeunKruangAppDelegate *appDelegate = (KeunKruangAppDelegate *)[[UIApplication sharedApplication] delegate];
 	Passport *pp1 = [appDelegate.pp objectAtIndex:indexPath.row];
-	
-	[cell setPP:pp1];
-	
+    
 	// Set up the cell
+    cell.textLabel.text = [NSString stringWithFormat:@"หนังสือเดินทาง %@", pp1.no];
+    if(pp1.type==1){
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"ประเภททั่วไป"];
+    }
+    else{
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"ประเภทราชการ"];
+    }
     [cell setAccessoryType:UITableViewCellAccessoryDetailDisclosureButton];
 	return cell;
 }
