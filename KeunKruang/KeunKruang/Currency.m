@@ -35,7 +35,6 @@
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.title=@"อัตราแลกเปลี่ยน";
     NSString *urlAddress=@"http://www.bangkokbank.com/_layouts/NR/BangkokBankThaiWebApps/WebApp%20Currency%20Exchange%20Thai2/user_conversion_popup.asp";
-    
     //Create a URL object.
     NSURL *url = [NSURL URLWithString:urlAddress];
     
@@ -45,6 +44,14 @@
     //Load the request in the UIWebView.
     [webView loadRequest:requestObj];    
     webView.scalesPageToFit=YES;
+}
+- (void)webViewDidStartLoad:(UIWebView *)webView{
+    UIApplication *application = [UIApplication sharedApplication];
+    application.networkActivityIndicatorVisible = YES;
+}
+- (void)webViewDidFinishLoad:(UIWebView *)webView{
+    UIApplication *application = [UIApplication sharedApplication];
+    application.networkActivityIndicatorVisible = NO;
 }
 
 - (void)viewDidUnload

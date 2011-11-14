@@ -47,12 +47,23 @@
     webView.scalesPageToFit=YES;
 }
 
+- (void)webViewDidStartLoad:(UIWebView *)webView{
+    UIApplication *application = [UIApplication sharedApplication];
+    application.networkActivityIndicatorVisible = YES;
+}
+- (void)webViewDidFinishLoad:(UIWebView *)webView{
+    UIApplication *application = [UIApplication sharedApplication];
+    application.networkActivityIndicatorVisible = NO;
+}
+
 - (void)viewDidUnload
 {
     [webView release];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
+    UIApplication *application = [UIApplication sharedApplication];
+    application.networkActivityIndicatorVisible=NO;
     self.navigationItem.title=@"อื่นๆ";
     self.webView=nil;
 }
