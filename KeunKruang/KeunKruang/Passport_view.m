@@ -10,6 +10,7 @@
 #import "KeunKruangAppDelegate.h"
 
 @implementation Passport_view
+KeunKruangAppDelegate *appDelegate;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -45,6 +46,7 @@
     [[self navigationItem] setRightBarButtonItem:add];
     [add release];
     self.navigationItem.leftBarButtonItem=self.editButtonItem;
+    appDelegate = (KeunKruangAppDelegate *)[[UIApplication sharedApplication] delegate];
 }
 - (void)viewDidUnload
 {
@@ -91,7 +93,6 @@
 {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    KeunKruangAppDelegate *appDelegate = (KeunKruangAppDelegate *)[[UIApplication sharedApplication] delegate];
     return appDelegate.pp.count;
 }
 
@@ -106,7 +107,6 @@
                                        reuseIdentifier:CellIdentifier] autorelease];
     }
     
-	KeunKruangAppDelegate *appDelegate = (KeunKruangAppDelegate *)[[UIApplication sharedApplication] delegate];
 	Passport *pp1 = [appDelegate.pp objectAtIndex:indexPath.row];
     
 	// Set up the cell
@@ -140,28 +140,37 @@
 	return cell;
 }
 
-/*
+
+
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Return NO if you do not want the specified item to be editable.
+    if (self.tableView.editing) {
+        self.editButtonItem.title =  @"เสร็จ";
+    }
+    else
+        self.editButtonItem.title = @"ลบ";
     return YES;
 }
-*/
 
-/*
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
+        //Get the object to delete from the array.
+        KeunKruangAppDelegate *appDelegate = (KeunKruangAppDelegate *)[[UIApplication sharedApplication] delegate];
+        Passport *pp1 = [appDelegate.pp objectAtIndex:indexPath.row];
+        [appDelegate removePassport:pp1];
+        
+        //Delete the object from the table.
         [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }   
     else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
 }
-*/
+
 
 /*
 // Override to support rearranging the table view.

@@ -7,13 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+
+@class Passport;
+
 @interface KeunKruangAppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate,UINavigationBarDelegate>{
-    sqlite3 *dbase;
     NSMutableArray *pp;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 @property (nonatomic, retain) IBOutlet UITabBarController *tabBarController;
 @property (nonatomic, retain) NSMutableArray *pp;
+
+- (void) copyDatabaseIfNeeded;
+- (NSString *) getDBPath;
+- (void) removePassport:(Passport *)selected;
 
 @end

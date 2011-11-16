@@ -7,46 +7,72 @@
 //
 
 #import "Passport.h"
+#import "KeunKruangAppDelegate.h"
 
 static sqlite3_stmt *init_statement = nil;
+static sqlite3 *database = nil;
 
 @implementation Passport
 @synthesize no,type,expire,primaryKey;
 
--(id)initWithPK:(NSInteger)pk db:(sqlite3 *)db{
-    if(self =[super init]){
-        primaryKey=pk;
-        dbase=db;
-        if(init_statement==nil){
-            const char *sql="SELECT * FROM Passport WHERE id=?";
-            if(sqlite3_prepare(dbase, sql, -1, &init_statement, NULL)!= SQLITE_OK){
-                NSAssert1(0, @"Error : '%s'.", sqlite3_errmsg(dbase));
++ (void) getInitialDataToDisplay:(NSString *)dbPath {
+     KeunKruangAppDelegate *appDelegate = (KeunKruangAppDelegate *)[[UIApplication sharedApplication] delegate];
+    
+    if (sqlite3_open([dbPath UTF8String], &database) == SQLITE_OK) {
+        
+        const char *sql = "select * from Passport";
+        sqlite3_stmt *selectstmt;
+        if(sqlite3_prepare_v2(database, sql, -1, &selectstmt, NULL) == SQLITE_OK) {
+            
+            while(sqlite3_step(selectstmt) == SQLITE_ROW) {
+                
+                NSInteger primaryKey = sqlite3_column_int(selectstmt, 0);
+                Passport *pp1 = [[Passport alloc] initWithPrimaryKey:primaryKey];
+                pp1.no = [NSString stringWithUTF8String:(char *)sqlite3_column_text(selectstmt, 1)];
+                pp1.type = sqlite3_column_int(init_statement, 2);
+                NSString *expire_str=[NSString stringWithUTF8String:(char *)sqlite3_column_text(selectstmt, 3)];
+                NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+                // this is imporant - we set our input date format to match our input string
+                // if format doesn't match you'll get nil from your string, so be careful
+                [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+                NSDate *dateFromString = [[NSDate alloc] init];
+                // voila!
+                dateFromString = [dateFormatter dateFromString:expire_str];
+                [dateFormatter release];
+                pp1.expire = dateFromString;
+                
+                [appDelegate.pp addObject:pp1];
+                [pp1 release];
             }
         }
-        sqlite3_bind_int(init_statement,1,primaryKey);
-        if(sqlite3_step(init_statement)==SQLITE_ROW){
-            //no
-            self.no = [NSString stringWithUTF8String:(char *)sqlite3_column_text(init_statement, 1)];
-            //type
-            self.type = sqlite3_column_int(init_statement, 2);
-            //expire
-            NSString *expire_str=[NSString stringWithUTF8String:(char *)sqlite3_column_text(init_statement, 3)];
-            NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-            // this is imporant - we set our input date format to match our input string
-            // if format doesn't match you'll get nil from your string, so be careful
-            [dateFormatter setDateFormat:@"yyyy-MM-dd"];
-            NSDate *dateFromString = [[NSDate alloc] init];
-            // voila!
-            dateFromString = [dateFormatter dateFromString:expire_str];
-            [dateFormatter release];
-            self.expire = dateFromString;
-            NSLog(@":%@ %d %@",self.no,self.type,self.expire);
-        }
-        else{
-            self.no=@"Nothing";
-        }
-        sqlite3_reset(init_statement);
     }
+    else
+        sqlite3_close(database); //Even though the open call failed, close the database connection to release all the memory.
+}
+- (id) initWithPrimaryKey:(NSInteger) pk {
+    [super init];
+    primaryKey = pk;
+    
     return self;
 }
++ (void) finalizeStatements {
+    if(database) sqlite3_close(database);
+}
+- (void) deletePP {
+    if(init_statement == nil) {
+        const char *sql = "delete from Passport where id = ?";
+        if(sqlite3_prepare_v2(database, sql, -1, &init_statement, NULL) != SQLITE_OK)
+            NSAssert1(0, @"Error while creating delete statement. '%s'", sqlite3_errmsg(database));
+    }
+    
+    //When binding parameters, index starts from 1 and not zero.
+    sqlite3_bind_int(init_statement, 1, primaryKey);
+    
+    if (SQLITE_DONE != sqlite3_step(init_statement))
+        NSAssert1(0, @"Error while deleting. '%s'", sqlite3_errmsg(database));
+    
+    sqlite3_reset(init_statement);
+}
+
+
 @end

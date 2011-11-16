@@ -9,7 +9,6 @@
 #import <Foundation/Foundation.h>
 #import <sqlite3.h>
 @interface Passport : NSObject{
-    sqlite3 *dbase;
     NSString *no;
     NSInteger primaryKey;
     NSInteger type;
@@ -21,6 +20,11 @@
 @property(nonatomic) NSInteger type;
 @property(nonatomic,retain) NSDate *expire;
 
--(id)initWithPK:(NSInteger)pk db:(sqlite3 *)db;
+//Static methods.
++ (void) getInitialDataToDisplay:(NSString *)dbPath;
++ (void) finalizeStatements;
+
+//Instance methods.
+- (id) initWithPrimaryKey:(NSInteger)pk;
 
 @end
