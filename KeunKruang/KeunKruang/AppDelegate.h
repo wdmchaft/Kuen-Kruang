@@ -10,7 +10,7 @@
 
 @class Passport;
 
-@interface KeunKruangAppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate,UINavigationBarDelegate>{
+@interface AppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate,UINavigationBarDelegate>{
     NSMutableArray *pp;
 }
 
@@ -21,5 +21,6 @@
 - (void) copyDatabaseIfNeeded;
 - (NSString *) getDBPath;
 - (void) removePassport:(Passport *)selected;
+- (void) addPassport:(Passport *)selected;
 
 @end

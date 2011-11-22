@@ -6,10 +6,10 @@
 //  Copyright 2011 Chulalongkorn University. All rights reserved.
 //
 
-#import "KeunKruangAppDelegate.h"
+#import "AppDelegate.h"
 #import "Passport.h"
 
-@implementation KeunKruangAppDelegate
+@implementation AppDelegate
 
 @synthesize window = _window;
 @synthesize tabBarController = _tabBarController;
@@ -124,5 +124,12 @@
     
     //Remove it from the array.
     [pp removeObject:selected];
+}
+- (void) addPassport:(Passport *)selected{
+    //Add it to the database.
+    [selected addPP];
+    
+    //Add it to the coffee array.
+    [pp addObject:selected];
 }
 @end
