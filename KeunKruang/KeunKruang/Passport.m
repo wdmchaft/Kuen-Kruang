@@ -7,7 +7,7 @@
 //
 
 #import "Passport.h"
-#import "KeunKruangAppDelegate.h"
+#import "AppDelegate.h"
 
 static sqlite3_stmt *init_statement = nil;
 static sqlite3 *database = nil;
@@ -16,7 +16,7 @@ static sqlite3 *database = nil;
 @synthesize no,type,expire,primaryKey;
 
 + (void) getInitialDataToDisplay:(NSString *)dbPath {
-     KeunKruangAppDelegate *appDelegate = (KeunKruangAppDelegate *)[[UIApplication sharedApplication] delegate];
+     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     
     if (sqlite3_open([dbPath UTF8String], &database) == SQLITE_OK) {
         
@@ -57,6 +57,7 @@ static sqlite3 *database = nil;
 }
 + (void) finalizeStatements {
     if(database) sqlite3_close(database);
+    if(init_statement) sqlite3_finalize(init_statement);
 }
 - (void) deletePP {
     if(init_statement == nil) {
@@ -74,5 +75,24 @@ static sqlite3 *database = nil;
     sqlite3_reset(init_statement);
 }
 
-
+- (void) addPP {
+    if(init_statement == nil) {
+        const char *sql = "insert into Passport(no, type, expire) Values(?, ?, ?)";
+        if(sqlite3_prepare_v2(database, sql, -1, &init_statement, NULL) != SQLITE_OK)
+            NSAssert1(0, @"Error while creating add statement. '%s'", sqlite3_errmsg(database));
+    }
+    
+    sqlite3_bind_text(init_statement, 1, [no UTF8String], -1, SQLITE_TRANSIENT);
+    sqlite3_bind_int(init_statement, 2, [type intValue]);
+    sqlite3_bind_text(init_statement, 3, [expire UTF8String], -1, SQLITE_TRANSIENT);
+ 
+    if(SQLITE_DONE != sqlite3_step(init_statement))
+        NSAssert1(0, @"Error while inserting data. '%s'", sqlite3_errmsg(database));
+    else
+        //SQLite provides a method to get the last primary key inserted by using sqlite3_last_insert_rowid
+        primaryKey = sqlite3_last_insert_rowid(database);
+    
+    //Reset the add statement.
+    sqlite3_reset(init_statement);
+}
 @end

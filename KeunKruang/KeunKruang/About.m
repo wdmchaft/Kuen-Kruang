@@ -49,6 +49,7 @@
 }
 - (void) dealloc
 {
+    [AboutTextSV release];
     [super dealloc];
 }
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

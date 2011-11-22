@@ -46,12 +46,10 @@
     webView.scalesPageToFit=YES;
 }
 - (void)webViewDidStartLoad:(UIWebView *)webView{
-    UIApplication *application = [UIApplication sharedApplication];
-    application.networkActivityIndicatorVisible = YES;
+    [UIApplication sharedApplication].networkActivityIndicatorVisible=YES;
 }
-- (void)webViewDidFinishLoad:(UIWebView *)webView{
-    UIApplication *application = [UIApplication sharedApplication];
-    application.networkActivityIndicatorVisible = NO;
+- (void)webViewDidFinishLoad:(UIWebView *)webView{    
+    [UIApplication sharedApplication].networkActivityIndicatorVisible=NO;
 }
 
 - (void)viewDidUnload
@@ -61,11 +59,12 @@
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
     self.navigationItem.title=@"อื่นๆ";
-    webView=nil;
 }
 - (void) dealloc
 {
+    [webView release];
     [super dealloc];
+    [UIApplication sharedApplication].networkActivityIndicatorVisible=NO;
 }
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {

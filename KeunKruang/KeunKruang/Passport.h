@@ -26,5 +26,7 @@
 
 //Instance methods.
 - (id) initWithPrimaryKey:(NSInteger)pk;
+- (void) deletePP;
+- (void) addPP;
 
 @end

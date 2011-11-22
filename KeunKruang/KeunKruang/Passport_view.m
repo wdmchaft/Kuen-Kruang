@@ -7,10 +7,10 @@
 //
 
 #import "Passport_view.h"
-#import "KeunKruangAppDelegate.h"
+#import "AppDelegate.h"
 
 @implementation Passport_view
-KeunKruangAppDelegate *appDelegate;
+AppDelegate *appDelegate;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -45,8 +45,9 @@ KeunKruangAppDelegate *appDelegate;
                             action:nil];
     [[self navigationItem] setRightBarButtonItem:add];
     [add release];
+    self.editButtonItem.title = @"ลบ";
     self.navigationItem.leftBarButtonItem=self.editButtonItem;
-    appDelegate = (KeunKruangAppDelegate *)[[UIApplication sharedApplication] delegate];
+    appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
 }
 - (void)viewDidUnload
 {
@@ -141,7 +142,7 @@ KeunKruangAppDelegate *appDelegate;
 }
 
 
-
+/*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -152,14 +153,30 @@ KeunKruangAppDelegate *appDelegate;
         self.editButtonItem.title = @"ลบ";
     return YES;
 }
-
+ */
+- (void) setEditing:(BOOL)editing animated:(BOOL)animated {
+    //Do super before, it will change the name of the editing button
+    [super setEditing:editing animated:animated];
+    
+    if (editing) {
+        self.navigationItem.leftBarButtonItem.title = @"เสร็จ";
+        self.navigationItem.leftBarButtonItem.style = UIBarButtonItemStyleDone;
+    }
+    else {
+        self.navigationItem.leftBarButtonItem.title = @"ลบ";
+        self.navigationItem.leftBarButtonItem.style = UIBarButtonItemStyleBordered;
+    }
+}
+-(NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return @"ลบ";
+}
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
         //Get the object to delete from the array.
-        KeunKruangAppDelegate *appDelegate = (KeunKruangAppDelegate *)[[UIApplication sharedApplication] delegate];
+        AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
         Passport *pp1 = [appDelegate.pp objectAtIndex:indexPath.row];
         [appDelegate removePassport:pp1];
         

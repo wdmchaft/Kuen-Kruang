@@ -44,7 +44,7 @@
 		80C06AC11448AC8200169599 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80C06AC01448AC8200169599 /* CoreGraphics.framework */; };
 		80F2A0B9143EB3BA007D0D79 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 80F2A0B7143EB3BA007D0D79 /* InfoPlist.strings */; };
 		80F2A0BB143EB3BA007D0D79 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 80F2A0BA143EB3BA007D0D79 /* main.m */; };
-		80F2A0BF143EB3BA007D0D79 /* KeunKruangAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 80F2A0BE143EB3BA007D0D79 /* KeunKruangAppDelegate.m */; };
+		80F2A0BF143EB3BA007D0D79 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 80F2A0BE143EB3BA007D0D79 /* AppDelegate.m */; };
 		80F2A0C2143EB3BA007D0D79 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80F2A0C0143EB3BA007D0D79 /* MainWindow.xib */; };
 		80F2A0D9143EB410007D0D79 /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 80F2A0D5143EB410007D0D79 /* bg.png */; };
 		80F2A0DA143EB410007D0D79 /* bg.pxm in Resources */ = {isa = PBXBuildFile; fileRef = 80F2A0D6143EB410007D0D79 /* bg.pxm */; };
@@ -103,8 +103,8 @@
 		80F2A0B8143EB3BA007D0D79 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		80F2A0BA143EB3BA007D0D79 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		80F2A0BC143EB3BA007D0D79 /* KeunKruang-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KeunKruang-Prefix.pch"; sourceTree = "<group>"; };
-		80F2A0BD143EB3BA007D0D79 /* KeunKruangAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeunKruangAppDelegate.h; sourceTree = "<group>"; };
-		80F2A0BE143EB3BA007D0D79 /* KeunKruangAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KeunKruangAppDelegate.m; sourceTree = "<group>"; };
+		80F2A0BD143EB3BA007D0D79 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		80F2A0BE143EB3BA007D0D79 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		80F2A0C1143EB3BA007D0D79 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
 		80F2A0D5143EB410007D0D79 /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg.png; sourceTree = "<group>"; };
 		80F2A0D6143EB410007D0D79 /* bg.pxm */ = {isa = PBXFileReference; lastKnownFileType = file; path = bg.pxm; sourceTree = "<group>"; };
@@ -228,8 +228,8 @@
 				8052A8721468347200254242 /* Reachability.m */,
 				800E1626144F37EC00571CBD /* Passport */,
 				804078331448B482006F8A40 /* More */,
-				80F2A0BD143EB3BA007D0D79 /* KeunKruangAppDelegate.h */,
-				80F2A0BE143EB3BA007D0D79 /* KeunKruangAppDelegate.m */,
+				80F2A0BD143EB3BA007D0D79 /* AppDelegate.h */,
+				80F2A0BE143EB3BA007D0D79 /* AppDelegate.m */,
 				80F2A0C0143EB3BA007D0D79 /* MainWindow.xib */,
 				80F2A0B5143EB3BA007D0D79 /* Supporting Files */,
 				804A3C1F14488624002FCEDC /* Tips.h */,
@@ -357,7 +357,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				80F2A0BB143EB3BA007D0D79 /* main.m in Sources */,
-				80F2A0BF143EB3BA007D0D79 /* KeunKruangAppDelegate.m in Sources */,
+				80F2A0BF143EB3BA007D0D79 /* AppDelegate.m in Sources */,
 				804A3C2214488624002FCEDC /* Tips.m in Sources */,
 				804078371448B49B006F8A40 /* About.m in Sources */,
 				804C743B14498FFE00251269 /* More.m in Sources */,

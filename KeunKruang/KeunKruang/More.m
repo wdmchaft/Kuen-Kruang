@@ -53,6 +53,10 @@
 }
 -(void)dealloc
 {
+    [aboutvc release];
+    [currvc release];
+    [weavc release];
+    [arryData release];
     [super dealloc];
 }
 
