@@ -35,14 +35,15 @@ static sqlite3 *database = nil;
                 // this is imporant - we set our input date format to match our input string
                 // if format doesn't match you'll get nil from your string, so be careful
                 [dateFormatter setDateFormat:@"yyyy-MM-dd"];
-                NSDate *dateFromString = [[NSDate alloc] init];
+                NSDate *dateFromString = [NSDate alloc];
                 // voila!
                 dateFromString = [dateFormatter dateFromString:expire_str];
                 [dateFormatter release];
                 pp1.expire = dateFromString;
-                
                 [appDelegate.pp addObject:pp1];
                 [pp1 release];
+                dateFromString=nil;
+                [dateFromString release];
             }
         }
     }
@@ -84,7 +85,11 @@ static sqlite3 *database = nil;
     
     sqlite3_bind_text(init_statement, 1, [no UTF8String], -1, SQLITE_TRANSIENT);
     sqlite3_bind_int(init_statement, 2, [type intValue]);
-    sqlite3_bind_text(init_statement, 3, [expire UTF8String], -1, SQLITE_TRANSIENT);
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"dd-MM-yyyy"];
+    NSString *strDate = [dateFormatter stringFromDate:expire];
+    [dateFormatter release];
+    sqlite3_bind_text(init_statement, 3, [strDate UTF8String], -1, SQLITE_TRANSIENT);
  
     if(SQLITE_DONE != sqlite3_step(init_statement))
         NSAssert1(0, @"Error while inserting data. '%s'", sqlite3_errmsg(database));

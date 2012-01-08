@@ -14,6 +14,8 @@
 		800E1613144F27CF00571CBD /* Passport.m in Sources */ = {isa = PBXBuildFile; fileRef = 800E1612144F27CF00571CBD /* Passport.m */; };
 		800E161C144F2EEB00571CBD /* Passport_view.m in Sources */ = {isa = PBXBuildFile; fileRef = 800E161A144F2EEB00571CBD /* Passport_view.m */; };
 		800E161D144F2EEB00571CBD /* Passport_view.xib in Resources */ = {isa = PBXBuildFile; fileRef = 800E161B144F2EEB00571CBD /* Passport_view.xib */; };
+		8014C08F147CE14200D16D61 /* addPassport.m in Sources */ = {isa = PBXBuildFile; fileRef = 8014C08D147CE14200D16D61 /* addPassport.m */; };
+		8014C090147CE14200D16D61 /* addPassport.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8014C08E147CE14200D16D61 /* addPassport.xib */; };
 		804078371448B49B006F8A40 /* About.m in Sources */ = {isa = PBXBuildFile; fileRef = 804078351448B49B006F8A40 /* About.m */; };
 		804078381448B49B006F8A40 /* About.xib in Resources */ = {isa = PBXBuildFile; fileRef = 804078361448B49B006F8A40 /* About.xib */; };
 		804A3C2214488624002FCEDC /* Tips.m in Sources */ = {isa = PBXBuildFile; fileRef = 804A3C2014488624002FCEDC /* Tips.m */; };
@@ -28,20 +30,25 @@
 		804C74321449855600251269 /* tips@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 804C742A1449855600251269 /* tips@2x.png */; };
 		804C743B14498FFE00251269 /* More.m in Sources */ = {isa = PBXBuildFile; fileRef = 804C743914498FFE00251269 /* More.m */; };
 		804C743C14498FFE00251269 /* More.xib in Resources */ = {isa = PBXBuildFile; fileRef = 804C743A14498FFE00251269 /* More.xib */; };
+		804FD97714BA1A33009DCC4F /* DocumentMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 804FD97514BA1A33009DCC4F /* DocumentMain.m */; };
+		804FD97814BA1A33009DCC4F /* DocumentMain.xib in Resources */ = {isa = PBXBuildFile; fileRef = 804FD97614BA1A33009DCC4F /* DocumentMain.xib */; };
+		804FD97D14BA1C74009DCC4F /* DocumentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 804FD97B14BA1C74009DCC4F /* DocumentView.m */; };
+		804FD97E14BA1C74009DCC4F /* DocumentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 804FD97C14BA1C74009DCC4F /* DocumentView.xib */; };
+		804FD98214BA1FC1009DCC4F /* Luggage.m in Sources */ = {isa = PBXBuildFile; fileRef = 804FD98114BA1FC1009DCC4F /* Luggage.m */; };
+		804FD98514BA206D009DCC4F /* LuggageParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 804FD98414BA206D009DCC4F /* LuggageParser.m */; };
 		8052A86F1468340300254242 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8052A86E1468340300254242 /* SystemConfiguration.framework */; };
 		8052A8731468347200254242 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 8052A8721468347200254242 /* Reachability.m */; };
 		807E752D146D9C8A00925C70 /* KeunKruang.db in Resources */ = {isa = PBXBuildFile; fileRef = 807E752C146D9C8A00925C70 /* KeunKruang.db */; };
 		807F2FB2144A033D008EF06A /* Weather.m in Sources */ = {isa = PBXBuildFile; fileRef = 807F2FB0144A033D008EF06A /* Weather.m */; };
 		807F2FB3144A033D008EF06A /* Weather.xib in Resources */ = {isa = PBXBuildFile; fileRef = 807F2FB1144A033D008EF06A /* Weather.xib */; };
 		809A63AD144984EA006AFFFB /* pouhnmk_logo_white.png in Resources */ = {isa = PBXBuildFile; fileRef = 809A63AB144984EA006AFFFB /* pouhnmk_logo_white.png */; };
-		80C06AB61448ABFE00169599 /* image1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 80C06AB11448ABFE00169599 /* image1.jpg */; };
-		80C06AB71448ABFE00169599 /* image2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 80C06AB21448ABFE00169599 /* image2.jpg */; };
-		80C06AB81448ABFE00169599 /* image3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 80C06AB31448ABFE00169599 /* image3.jpg */; };
-		80C06AB91448ABFE00169599 /* image4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 80C06AB41448ABFE00169599 /* image4.jpg */; };
-		80C06ABA1448ABFE00169599 /* image5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 80C06AB51448ABFE00169599 /* image5.jpg */; };
 		80C06ABD1448AC7600169599 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80C06ABC1448AC7600169599 /* UIKit.framework */; };
 		80C06ABF1448AC7C00169599 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80C06ABE1448AC7C00169599 /* Foundation.framework */; };
 		80C06AC11448AC8200169599 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80C06AC01448AC8200169599 /* CoreGraphics.framework */; };
+		80DD3AA614B8BF2D00E9E19B /* CListParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 80DD3AA314B8BF2D00E9E19B /* CListParser.m */; };
+		80DD3AA714B8BF2D00E9E19B /* VisaParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 80DD3AA514B8BF2D00E9E19B /* VisaParser.m */; };
+		80DD3AAD14B8BF5C00E9E19B /* Country.m in Sources */ = {isa = PBXBuildFile; fileRef = 80DD3AAA14B8BF5C00E9E19B /* Country.m */; };
+		80DD3AAE14B8BF5C00E9E19B /* Visa.m in Sources */ = {isa = PBXBuildFile; fileRef = 80DD3AAC14B8BF5C00E9E19B /* Visa.m */; };
 		80F2A0B9143EB3BA007D0D79 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 80F2A0B7143EB3BA007D0D79 /* InfoPlist.strings */; };
 		80F2A0BB143EB3BA007D0D79 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 80F2A0BA143EB3BA007D0D79 /* main.m */; };
 		80F2A0BF143EB3BA007D0D79 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 80F2A0BE143EB3BA007D0D79 /* AppDelegate.m */; };
@@ -52,6 +59,10 @@
 		80F2A0DC143EB410007D0D79 /* bg@2x.pxm in Resources */ = {isa = PBXBuildFile; fileRef = 80F2A0D8143EB410007D0D79 /* bg@2x.pxm */; };
 		80F2A0DE143EB421007D0D79 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 80F2A0DD143EB421007D0D79 /* Default.png */; };
 		80F2A0E0143EB428007D0D79 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 80F2A0DF143EB428007D0D79 /* Default@2x.png */; };
+		80F500B514B8C077002D402F /* VisaDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 80F500B014B8C077002D402F /* VisaDetail.m */; };
+		80F500B614B8C077002D402F /* VisaDetail.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80F500B114B8C077002D402F /* VisaDetail.xib */; };
+		80F500B714B8C077002D402F /* VisaMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 80F500B314B8C077002D402F /* VisaMain.m */; };
+		80F500B814B8C077002D402F /* VisaMain.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80F500B414B8C077002D402F /* VisaMain.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +76,9 @@
 		800E1619144F2EEB00571CBD /* Passport_view.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Passport_view.h; sourceTree = "<group>"; };
 		800E161A144F2EEB00571CBD /* Passport_view.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Passport_view.m; sourceTree = "<group>"; };
 		800E161B144F2EEB00571CBD /* Passport_view.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Passport_view.xib; sourceTree = "<group>"; };
+		8014C08C147CE14200D16D61 /* addPassport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = addPassport.h; sourceTree = "<group>"; };
+		8014C08D147CE14200D16D61 /* addPassport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = addPassport.m; sourceTree = "<group>"; };
+		8014C08E147CE14200D16D61 /* addPassport.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = addPassport.xib; sourceTree = "<group>"; };
 		804078341448B49B006F8A40 /* About.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = About.h; sourceTree = "<group>"; };
 		804078351448B49B006F8A40 /* About.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = About.m; sourceTree = "<group>"; };
 		804078361448B49B006F8A40 /* About.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = About.xib; sourceTree = "<group>"; };
@@ -82,6 +96,16 @@
 		804C743814498FFE00251269 /* More.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = More.h; sourceTree = "<group>"; };
 		804C743914498FFE00251269 /* More.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = More.m; sourceTree = "<group>"; };
 		804C743A14498FFE00251269 /* More.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = More.xib; sourceTree = "<group>"; };
+		804FD97414BA1A33009DCC4F /* DocumentMain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocumentMain.h; sourceTree = "<group>"; };
+		804FD97514BA1A33009DCC4F /* DocumentMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocumentMain.m; sourceTree = "<group>"; };
+		804FD97614BA1A33009DCC4F /* DocumentMain.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DocumentMain.xib; sourceTree = "<group>"; };
+		804FD97A14BA1C74009DCC4F /* DocumentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocumentView.h; sourceTree = "<group>"; };
+		804FD97B14BA1C74009DCC4F /* DocumentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocumentView.m; sourceTree = "<group>"; };
+		804FD97C14BA1C74009DCC4F /* DocumentView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DocumentView.xib; sourceTree = "<group>"; };
+		804FD98014BA1FC1009DCC4F /* Luggage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Luggage.h; sourceTree = "<group>"; };
+		804FD98114BA1FC1009DCC4F /* Luggage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Luggage.m; sourceTree = "<group>"; };
+		804FD98314BA206D009DCC4F /* LuggageParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LuggageParser.h; sourceTree = "<group>"; };
+		804FD98414BA206D009DCC4F /* LuggageParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LuggageParser.m; sourceTree = "<group>"; };
 		8052A86E1468340300254242 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		8052A8711468347200254242 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		8052A8721468347200254242 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
@@ -90,15 +114,18 @@
 		807F2FB0144A033D008EF06A /* Weather.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Weather.m; sourceTree = "<group>"; };
 		807F2FB1144A033D008EF06A /* Weather.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Weather.xib; sourceTree = "<group>"; };
 		809A63AB144984EA006AFFFB /* pouhnmk_logo_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pouhnmk_logo_white.png; sourceTree = "<group>"; };
-		80C06AB11448ABFE00169599 /* image1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = image1.jpg; path = ../../../Downloads/Scrolling/image1.jpg; sourceTree = "<group>"; };
-		80C06AB21448ABFE00169599 /* image2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = image2.jpg; path = ../../../Downloads/Scrolling/image2.jpg; sourceTree = "<group>"; };
-		80C06AB31448ABFE00169599 /* image3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = image3.jpg; path = ../../../Downloads/Scrolling/image3.jpg; sourceTree = "<group>"; };
-		80C06AB41448ABFE00169599 /* image4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = image4.jpg; path = ../../../Downloads/Scrolling/image4.jpg; sourceTree = "<group>"; };
-		80C06AB51448ABFE00169599 /* image5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = image5.jpg; path = ../../../Downloads/Scrolling/image5.jpg; sourceTree = "<group>"; };
 		80C06ABC1448AC7600169599 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		80C06ABE1448AC7C00169599 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		80C06AC01448AC8200169599 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		80F2A0AA143EB3BA007D0D79 /* KeunKruang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KeunKruang.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		80DD3AA214B8BF2D00E9E19B /* CListParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CListParser.h; sourceTree = "<group>"; };
+		80DD3AA314B8BF2D00E9E19B /* CListParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CListParser.m; sourceTree = "<group>"; };
+		80DD3AA414B8BF2D00E9E19B /* VisaParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VisaParser.h; sourceTree = "<group>"; };
+		80DD3AA514B8BF2D00E9E19B /* VisaParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VisaParser.m; sourceTree = "<group>"; };
+		80DD3AA914B8BF5C00E9E19B /* Country.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Country.h; sourceTree = "<group>"; };
+		80DD3AAA14B8BF5C00E9E19B /* Country.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Country.m; sourceTree = "<group>"; };
+		80DD3AAB14B8BF5C00E9E19B /* Visa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Visa.h; sourceTree = "<group>"; };
+		80DD3AAC14B8BF5C00E9E19B /* Visa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Visa.m; sourceTree = "<group>"; };
+		80F2A0AA143EB3BA007D0D79 /* Boarding.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Boarding.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80F2A0B6143EB3BA007D0D79 /* KeunKruang-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "KeunKruang-Info.plist"; sourceTree = "<group>"; };
 		80F2A0B8143EB3BA007D0D79 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		80F2A0BA143EB3BA007D0D79 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -112,6 +139,12 @@
 		80F2A0D8143EB410007D0D79 /* bg@2x.pxm */ = {isa = PBXFileReference; lastKnownFileType = file; path = "bg@2x.pxm"; sourceTree = "<group>"; };
 		80F2A0DD143EB421007D0D79 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		80F2A0DF143EB428007D0D79 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		80F500AF14B8C077002D402F /* VisaDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VisaDetail.h; sourceTree = "<group>"; };
+		80F500B014B8C077002D402F /* VisaDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VisaDetail.m; sourceTree = "<group>"; };
+		80F500B114B8C077002D402F /* VisaDetail.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VisaDetail.xib; sourceTree = "<group>"; };
+		80F500B214B8C077002D402F /* VisaMain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VisaMain.h; sourceTree = "<group>"; };
+		80F500B314B8C077002D402F /* VisaMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VisaMain.m; sourceTree = "<group>"; };
+		80F500B414B8C077002D402F /* VisaMain.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VisaMain.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +171,9 @@
 				800E1619144F2EEB00571CBD /* Passport_view.h */,
 				800E161A144F2EEB00571CBD /* Passport_view.m */,
 				800E161B144F2EEB00571CBD /* Passport_view.xib */,
+				8014C08C147CE14200D16D61 /* addPassport.h */,
+				8014C08D147CE14200D16D61 /* addPassport.m */,
+				8014C08E147CE14200D16D61 /* addPassport.xib */,
 			);
 			name = Passport;
 			sourceTree = "<group>";
@@ -145,11 +181,6 @@
 		801D4D94143F563E005C0F5D /* tips */ = {
 			isa = PBXGroup;
 			children = (
-				80C06AB11448ABFE00169599 /* image1.jpg */,
-				80C06AB21448ABFE00169599 /* image2.jpg */,
-				80C06AB31448ABFE00169599 /* image3.jpg */,
-				80C06AB41448ABFE00169599 /* image4.jpg */,
-				80C06AB51448ABFE00169599 /* image5.jpg */,
 			);
 			name = tips;
 			sourceTree = "<group>";
@@ -157,6 +188,9 @@
 		804078331448B482006F8A40 /* More */ = {
 			isa = PBXGroup;
 			children = (
+				80F500BB14B8CE58002D402F /* Luggage */,
+				80F500BA14B8CE49002D402F /* Document */,
+				80DD3A9F14B8BF0100E9E19B /* Visa */,
 				804078341448B49B006F8A40 /* About.h */,
 				804078351448B49B006F8A40 /* About.m */,
 				804078361448B49B006F8A40 /* About.xib */,
@@ -171,6 +205,17 @@
 				807F2FB1144A033D008EF06A /* Weather.xib */,
 			);
 			name = More;
+			sourceTree = "<group>";
+		};
+		804FD97F14BA1F7E009DCC4F /* LuggageParser */ = {
+			isa = PBXGroup;
+			children = (
+				804FD98014BA1FC1009DCC4F /* Luggage.h */,
+				804FD98114BA1FC1009DCC4F /* Luggage.m */,
+				804FD98314BA206D009DCC4F /* LuggageParser.h */,
+				804FD98414BA206D009DCC4F /* LuggageParser.m */,
+			);
+			name = LuggageParser;
 			sourceTree = "<group>";
 		};
 		806F9FAB143ECE5F00AC2A32 /* tabbar */ = {
@@ -188,6 +233,43 @@
 			name = tabbar;
 			sourceTree = "<group>";
 		};
+		80DD3A9F14B8BF0100E9E19B /* Visa */ = {
+			isa = PBXGroup;
+			children = (
+				80F500AF14B8C077002D402F /* VisaDetail.h */,
+				80F500B014B8C077002D402F /* VisaDetail.m */,
+				80F500B114B8C077002D402F /* VisaDetail.xib */,
+				80F500B214B8C077002D402F /* VisaMain.h */,
+				80F500B314B8C077002D402F /* VisaMain.m */,
+				80F500B414B8C077002D402F /* VisaMain.xib */,
+			);
+			name = Visa;
+			sourceTree = "<group>";
+		};
+		80DD3AA114B8BF0E00E9E19B /* Parser */ = {
+			isa = PBXGroup;
+			children = (
+				804FD97F14BA1F7E009DCC4F /* LuggageParser */,
+				80DD3AA814B8BF3E00E9E19B /* VisaParser */,
+			);
+			name = Parser;
+			sourceTree = "<group>";
+		};
+		80DD3AA814B8BF3E00E9E19B /* VisaParser */ = {
+			isa = PBXGroup;
+			children = (
+				80DD3AA914B8BF5C00E9E19B /* Country.h */,
+				80DD3AAA14B8BF5C00E9E19B /* Country.m */,
+				80DD3AAB14B8BF5C00E9E19B /* Visa.h */,
+				80DD3AAC14B8BF5C00E9E19B /* Visa.m */,
+				80DD3AA214B8BF2D00E9E19B /* CListParser.h */,
+				80DD3AA314B8BF2D00E9E19B /* CListParser.m */,
+				80DD3AA414B8BF2D00E9E19B /* VisaParser.h */,
+				80DD3AA514B8BF2D00E9E19B /* VisaParser.m */,
+			);
+			name = VisaParser;
+			sourceTree = "<group>";
+		};
 		80F2A09F143EB3BA007D0D79 = {
 			isa = PBXGroup;
 			children = (
@@ -195,7 +277,6 @@
 				800E160F144F279F00571CBD /* libsqlite3.0.dylib */,
 				80F2A0DF143EB428007D0D79 /* Default@2x.png */,
 				80F2A0DD143EB421007D0D79 /* Default.png */,
-				80F2A0D4143EB410007D0D79 /* img */,
 				80F2A0B4143EB3BA007D0D79 /* KeunKruang */,
 				80F2A0AD143EB3BA007D0D79 /* Frameworks */,
 				80F2A0AB143EB3BA007D0D79 /* Products */,
@@ -205,7 +286,7 @@
 		80F2A0AB143EB3BA007D0D79 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				80F2A0AA143EB3BA007D0D79 /* KeunKruang.app */,
+				80F2A0AA143EB3BA007D0D79 /* Boarding.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -223,6 +304,9 @@
 		80F2A0B4143EB3BA007D0D79 /* KeunKruang */ = {
 			isa = PBXGroup;
 			children = (
+				80F2A0D4143EB410007D0D79 /* img */,
+				80F500BC14B8CE9D002D402F /* Tips */,
+				80DD3AA114B8BF0E00E9E19B /* Parser */,
 				807E752C146D9C8A00925C70 /* KeunKruang.db */,
 				8052A8711468347200254242 /* Reachability.h */,
 				8052A8721468347200254242 /* Reachability.m */,
@@ -232,9 +316,6 @@
 				80F2A0BE143EB3BA007D0D79 /* AppDelegate.m */,
 				80F2A0C0143EB3BA007D0D79 /* MainWindow.xib */,
 				80F2A0B5143EB3BA007D0D79 /* Supporting Files */,
-				804A3C1F14488624002FCEDC /* Tips.h */,
-				804A3C2014488624002FCEDC /* Tips.m */,
-				804A3C2114488624002FCEDC /* Tips.xib */,
 			);
 			path = KeunKruang;
 			sourceTree = "<group>";
@@ -262,15 +343,46 @@
 				80F2A0D7143EB410007D0D79 /* bg@2x.png */,
 				80F2A0D8143EB410007D0D79 /* bg@2x.pxm */,
 			);
-			path = img;
+			name = img;
+			path = ../img;
+			sourceTree = "<group>";
+		};
+		80F500BA14B8CE49002D402F /* Document */ = {
+			isa = PBXGroup;
+			children = (
+				804FD97414BA1A33009DCC4F /* DocumentMain.h */,
+				804FD97514BA1A33009DCC4F /* DocumentMain.m */,
+				804FD97614BA1A33009DCC4F /* DocumentMain.xib */,
+				804FD97A14BA1C74009DCC4F /* DocumentView.h */,
+				804FD97B14BA1C74009DCC4F /* DocumentView.m */,
+				804FD97C14BA1C74009DCC4F /* DocumentView.xib */,
+			);
+			name = Document;
+			sourceTree = "<group>";
+		};
+		80F500BB14B8CE58002D402F /* Luggage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Luggage;
+			sourceTree = "<group>";
+		};
+		80F500BC14B8CE9D002D402F /* Tips */ = {
+			isa = PBXGroup;
+			children = (
+				804A3C1F14488624002FCEDC /* Tips.h */,
+				804A3C2014488624002FCEDC /* Tips.m */,
+				804A3C2114488624002FCEDC /* Tips.xib */,
+			);
+			name = Tips;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		80F2A0A9143EB3BA007D0D79 /* KeunKruang */ = {
+		80F2A0A9143EB3BA007D0D79 /* Boarding */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 80F2A0D1143EB3BB007D0D79 /* Build configuration list for PBXNativeTarget "KeunKruang" */;
+			buildConfigurationList = 80F2A0D1143EB3BB007D0D79 /* Build configuration list for PBXNativeTarget "Boarding" */;
 			buildPhases = (
 				80F2A0A6143EB3BA007D0D79 /* Sources */,
 				80F2A0A7143EB3BA007D0D79 /* Frameworks */,
@@ -280,9 +392,9 @@
 			);
 			dependencies = (
 			);
-			name = KeunKruang;
+			name = Boarding;
 			productName = KeunKruang;
-			productReference = 80F2A0AA143EB3BA007D0D79 /* KeunKruang.app */;
+			productReference = 80F2A0AA143EB3BA007D0D79 /* Boarding.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -306,7 +418,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				80F2A0A9143EB3BA007D0D79 /* KeunKruang */,
+				80F2A0A9143EB3BA007D0D79 /* Boarding */,
 			);
 		};
 /* End PBXProject section */
@@ -325,11 +437,6 @@
 				80F2A0DE143EB421007D0D79 /* Default.png in Resources */,
 				80F2A0E0143EB428007D0D79 /* Default@2x.png in Resources */,
 				804A3C2314488624002FCEDC /* Tips.xib in Resources */,
-				80C06AB61448ABFE00169599 /* image1.jpg in Resources */,
-				80C06AB71448ABFE00169599 /* image2.jpg in Resources */,
-				80C06AB81448ABFE00169599 /* image3.jpg in Resources */,
-				80C06AB91448ABFE00169599 /* image4.jpg in Resources */,
-				80C06ABA1448ABFE00169599 /* image5.jpg in Resources */,
 				804078381448B49B006F8A40 /* About.xib in Resources */,
 				809A63AD144984EA006AFFFB /* pouhnmk_logo_white.png in Resources */,
 				804C742B1449855600251269 /* flight.png in Resources */,
@@ -346,6 +453,11 @@
 				807F2FB3144A033D008EF06A /* Weather.xib in Resources */,
 				800E161D144F2EEB00571CBD /* Passport_view.xib in Resources */,
 				807E752D146D9C8A00925C70 /* KeunKruang.db in Resources */,
+				8014C090147CE14200D16D61 /* addPassport.xib in Resources */,
+				80F500B614B8C077002D402F /* VisaDetail.xib in Resources */,
+				80F500B814B8C077002D402F /* VisaMain.xib in Resources */,
+				804FD97814BA1A33009DCC4F /* DocumentMain.xib in Resources */,
+				804FD97E14BA1C74009DCC4F /* DocumentView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,6 +478,17 @@
 				800E1613144F27CF00571CBD /* Passport.m in Sources */,
 				800E161C144F2EEB00571CBD /* Passport_view.m in Sources */,
 				8052A8731468347200254242 /* Reachability.m in Sources */,
+				8014C08F147CE14200D16D61 /* addPassport.m in Sources */,
+				80DD3AA614B8BF2D00E9E19B /* CListParser.m in Sources */,
+				80DD3AA714B8BF2D00E9E19B /* VisaParser.m in Sources */,
+				80DD3AAD14B8BF5C00E9E19B /* Country.m in Sources */,
+				80DD3AAE14B8BF5C00E9E19B /* Visa.m in Sources */,
+				80F500B514B8C077002D402F /* VisaDetail.m in Sources */,
+				80F500B714B8C077002D402F /* VisaMain.m in Sources */,
+				804FD97714BA1A33009DCC4F /* DocumentMain.m in Sources */,
+				804FD97D14BA1C74009DCC4F /* DocumentView.m in Sources */,
+				804FD98214BA1FC1009DCC4F /* Luggage.m in Sources */,
+				804FD98514BA206D009DCC4F /* LuggageParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -482,7 +605,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		80F2A0D1143EB3BB007D0D79 /* Build configuration list for PBXNativeTarget "KeunKruang" */ = {
+		80F2A0D1143EB3BB007D0D79 /* Build configuration list for PBXNativeTarget "Boarding" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				80F2A0D2143EB3BB007D0D79 /* Debug */,

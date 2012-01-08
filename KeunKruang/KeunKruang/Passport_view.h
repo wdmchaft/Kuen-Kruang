@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "addPassport.h"
 #import "Passport.h"
 
-@interface Passport_view : UITableViewController
+@interface Passport_view : UITableViewController{
+    addPassport *avController;
+    UINavigationController *addNavigationController;
+}
 @end

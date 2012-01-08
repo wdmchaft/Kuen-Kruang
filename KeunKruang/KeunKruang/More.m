@@ -10,7 +10,7 @@
 
 @implementation More
 @synthesize arryData;
-@synthesize currvc,weavc,aboutvc;
+@synthesize currvc,weavc,aboutvc,vvc,dvc;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -32,7 +32,7 @@
 
 - (void)viewDidLoad
 {
-    arryData = [[NSArray alloc] initWithObjects:@"อัตราแลกเปลี่ยน",@"สภาพอากาศ",@"ตัวอย่างการกรอกเอกสาร",@"ประเทศที่ได้รับการยกเว้นวีซ่า",@"เกี่ยวกับโปรแกรม",nil];
+    arryData = [[NSArray alloc] initWithObjects:@"อัตราแลกเปลี่ยน",@"สภาพอากาศ",@"ตัวอย่างการกรอกเอกสาร",@"ข้อมูลสัมภาระ",@"รายละเอียดวีซ่าประเทศต่างๆ",@"เกี่ยวกับโปรแกรม",nil];
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 }
@@ -45,10 +45,13 @@
     self.aboutvc=nil;
     self.currvc=nil;
     self.weavc=nil;
+    self.dvc=nil;
     self.arryData=nil;
     [aboutvc release];
     [currvc release];
     [weavc release];
+    [vvc release];
+    [dvc release];
     [arryData release];
 }
 -(void)dealloc
@@ -56,6 +59,8 @@
     [aboutvc release];
     [currvc release];
     [weavc release];
+    [vvc release];
+    [dvc release];
     [arryData release];
     [super dealloc];
 }
@@ -165,7 +170,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    Reachability *r = [Reachability reachabilityWithHostName:@"www.apple.com"];
+    Reachability *r = [Reachability reachabilityWithHostName:@"www.lingoomtang.com"];
     NetworkStatus internetStatus = [r currentReachabilityStatus];
     
     // Navigation logic may go here. Create and push another view controller.
@@ -177,7 +182,9 @@
      [detailViewController release];
      */
     if (indexPath.row == 0) {
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
         if ((internetStatus != ReachableViaWiFi) && (internetStatus != ReachableViaWWAN)) {
+            [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"เกิดข้อผิดพลาด" message:@"กรุณาเชื่อมต่อกับเครือข่ายอินเตอร์เน็ต" delegate:self cancelButtonTitle:nil otherButtonTitles:@"ตกลง", nil];
             [alert show];
             [alert release];
@@ -193,7 +200,9 @@
         }
 	}
     if (indexPath.row == 1) {
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
         if ((internetStatus != ReachableViaWiFi) && (internetStatus != ReachableViaWWAN)) {
+            [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"เกิดข้อผิดพลาด" message:@"กรุณาเชื่อมต่อกับเครือข่ายอินเตอร์เน็ต" delegate:self cancelButtonTitle:nil otherButtonTitles:@"ตกลง", nil];
             [alert show];
             [alert release];
@@ -208,7 +217,45 @@
             [self.navigationController pushViewController:self.weavc animated:YES];
         }
 	}
+    if (indexPath.row == 2) {
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+        if ((internetStatus != ReachableViaWiFi) && (internetStatus != ReachableViaWWAN)) {
+            [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"เกิดข้อผิดพลาด" message:@"กรุณาเชื่อมต่อกับเครือข่ายอินเตอร์เน็ต" delegate:self cancelButtonTitle:nil otherButtonTitles:@"ตกลง", nil];
+            [alert show];
+            [alert release];
+        }
+        else{
+            [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+            if(self.dvc == nil) {
+                DocumentMain *v =
+                [[DocumentMain alloc] initWithNibName:@"DocumentMain" bundle:[NSBundle mainBundle]];
+                self.dvc = v;
+                [v release];	
+            }
+            [self.navigationController pushViewController:self.dvc animated:YES];
+        }
+	}
     if (indexPath.row == 4) {
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+        if ((internetStatus != ReachableViaWiFi) && (internetStatus != ReachableViaWWAN)) {
+            [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"เกิดข้อผิดพลาด" message:@"กรุณาเชื่อมต่อกับเครือข่ายอินเตอร์เน็ต" delegate:self cancelButtonTitle:nil otherButtonTitles:@"ตกลง", nil];
+            [alert show];
+            [alert release];
+        }
+        else{
+            [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+            if(self.vvc == nil) {
+                VisaMain *v =
+                [[VisaMain alloc] initWithNibName:@"VisaMain" bundle:[NSBundle mainBundle]];
+                self.vvc = v;
+                [v release];	
+            }
+            [self.navigationController pushViewController:self.vvc animated:YES];
+        }
+	}
+    if (indexPath.row == 5) {
         if(self.aboutvc == nil) {
             About *about =
             [[About alloc] initWithNibName:@"About" bundle:[NSBundle mainBundle]];
@@ -220,10 +267,14 @@
     [aboutvc release];
     [currvc release];
     [weavc release];
+    [vvc release];
+    [dvc release];
     [arryData release];
     aboutvc=nil;
     currvc=nil;
     weavc=nil;
+    vvc=nil;
+    dvc=nil;
     arryData=nil;
 }
 @end

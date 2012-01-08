@@ -11,15 +11,21 @@
 #import "About.h"
 #import "Currency.h"
 #import "Weather.h"
-@interface More : UIViewController{
+#import "VisaMain.h"
+#import "DocumentMain.h"
+@interface More : UITableViewController{
     IBOutlet UITableView *menu;
     NSArray *arryData;
     About *aboutvc;
     Currency *currvc;
     Weather *weavc;
+    VisaMain *vvc;
+    DocumentMain *dvc;
 }
 @property(nonatomic,retain) NSArray *arryData;
 @property(nonatomic,retain) About *aboutvc;
 @property(nonatomic,retain) Currency *currvc;
 @property(nonatomic,retain) Weather *weavc;
+@property(nonatomic,retain) VisaMain *vvc;
+@property(nonatomic,retain) DocumentMain *dvc;
 @end

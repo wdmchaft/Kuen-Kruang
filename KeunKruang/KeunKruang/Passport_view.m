@@ -7,6 +7,7 @@
 //
 
 #import "Passport_view.h"
+#import "addPassport.h"
 #import "AppDelegate.h"
 
 @implementation Passport_view
@@ -42,7 +43,7 @@ AppDelegate *appDelegate;
     UIBarButtonItem *add = [[UIBarButtonItem alloc]
                             initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
                             target:self
-                            action:nil];
+                            action:@selector(add_Clicked:)];
     [[self navigationItem] setRightBarButtonItem:add];
     [add release];
     self.editButtonItem.title = @"ลบ";
@@ -161,10 +162,12 @@ AppDelegate *appDelegate;
     if (editing) {
         self.navigationItem.leftBarButtonItem.title = @"เสร็จ";
         self.navigationItem.leftBarButtonItem.style = UIBarButtonItemStyleDone;
+        self.navigationItem.rightBarButtonItem.enabled = NO;
     }
     else {
         self.navigationItem.leftBarButtonItem.title = @"ลบ";
         self.navigationItem.leftBarButtonItem.style = UIBarButtonItemStyleBordered;
+        self.navigationItem.rightBarButtonItem.enabled = YES;
     }
 }
 -(NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -218,5 +221,14 @@ AppDelegate *appDelegate;
      [detailViewController release];
      */
 }
-
+- (void) add_Clicked:(id)sender {
+    if(avController == nil)
+        avController = [[addPassport alloc] initWithNibName:@"addPassport" bundle:nil];
+    
+    if(addNavigationController == nil)
+        addNavigationController = [[UINavigationController alloc] initWithRootViewController:avController];
+    UIColor *newcolor=[UIColor colorWithRed:0.0/255.0 green:74.0/255.0 blue:184.0/255.0 alpha:1];
+    addNavigationController.navigationBar.tintColor=newcolor;
+    [self.navigationController presentModalViewController:addNavigationController animated:YES];
+}
 @end

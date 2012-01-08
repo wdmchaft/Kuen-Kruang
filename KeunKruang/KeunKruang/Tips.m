@@ -99,7 +99,8 @@
 		cx += scrollView.frame.size.width;
 	}
 	
-	self.pageControl.numberOfPages = nimages;
+	//self.pageControl.numberOfPages = nimages;
+    self.pageControl.numberOfPages = 0;
 	[scrollView setContentSize:CGSizeMake(cx, [scrollView bounds].size.height)];
 }
 
