@@ -13,6 +13,7 @@
 #import "Weather.h"
 #import "VisaMain.h"
 #import "DocumentMain.h"
+#import "LuggageMain.h"
 @interface More : UITableViewController{
     IBOutlet UITableView *menu;
     NSArray *arryData;
@@ -21,6 +22,7 @@
     Weather *weavc;
     VisaMain *vvc;
     DocumentMain *dvc;
+    LuggageMain *lvc;
 }
 @property(nonatomic,retain) NSArray *arryData;
 @property(nonatomic,retain) About *aboutvc;
@@ -28,4 +30,5 @@
 @property(nonatomic,retain) Weather *weavc;
 @property(nonatomic,retain) VisaMain *vvc;
 @property(nonatomic,retain) DocumentMain *dvc;
+@property(nonatomic,retain) LuggageMain *lvc;
 @end

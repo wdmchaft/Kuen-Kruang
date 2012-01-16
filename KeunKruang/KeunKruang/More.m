@@ -10,7 +10,8 @@
 
 @implementation More
 @synthesize arryData;
-@synthesize currvc,weavc,aboutvc,vvc,dvc;
+@synthesize currvc,weavc,aboutvc,vvc,dvc,lvc;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -46,11 +47,13 @@
     self.currvc=nil;
     self.weavc=nil;
     self.dvc=nil;
+    self.lvc=nil;
     self.arryData=nil;
     [aboutvc release];
     [currvc release];
     [weavc release];
     [vvc release];
+    [lvc release];
     [dvc release];
     [arryData release];
 }
@@ -61,6 +64,7 @@
     [weavc release];
     [vvc release];
     [dvc release];
+    [lvc release];
     [arryData release];
     [super dealloc];
 }
@@ -236,6 +240,25 @@
             [self.navigationController pushViewController:self.dvc animated:YES];
         }
 	}
+    if (indexPath.row == 3) {
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+        if ((internetStatus != ReachableViaWiFi) && (internetStatus != ReachableViaWWAN)) {
+            [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"เกิดข้อผิดพลาด" message:@"กรุณาเชื่อมต่อกับเครือข่ายอินเตอร์เน็ต" delegate:self cancelButtonTitle:nil otherButtonTitles:@"ตกลง", nil];
+            [alert show];
+            [alert release];
+        }
+        else{
+            [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+            if(self.lvc == nil) {
+                LuggageMain *v =
+                [[LuggageMain alloc] initWithNibName:@"LuggageMain" bundle:[NSBundle mainBundle]];
+                self.lvc = v;
+                [v release];	
+            }
+            [self.navigationController pushViewController:self.lvc animated:YES];
+        }
+	}
     if (indexPath.row == 4) {
         [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
         if ((internetStatus != ReachableViaWiFi) && (internetStatus != ReachableViaWWAN)) {
@@ -268,12 +291,14 @@
     [currvc release];
     [weavc release];
     [vvc release];
+    [lvc release];
     [dvc release];
     [arryData release];
     aboutvc=nil;
     currvc=nil;
     weavc=nil;
     vvc=nil;
+    lvc=nil;
     dvc=nil;
     arryData=nil;
 }

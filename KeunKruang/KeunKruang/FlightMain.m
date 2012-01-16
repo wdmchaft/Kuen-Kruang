@@ -1,16 +1,14 @@
 //
-//  Passport_view.m
+//  FlightMain.m
 //  KeunKruang
 //
-//  Created by Napawan Srisuksawad on 10/19/11.
-//  Copyright (c) 2011 Chulalongkorn University. All rights reserved.
+//  Created by Napawan Srisuksawad on 1/14/12.
+//  Copyright (c) 2012 Chulalongkorn University. All rights reserved.
 //
 
-#import "Passport_view.h"
-#import "addPassport.h"
+#import "FlightMain.h"
 #import "AppDelegate.h"
-
-@implementation Passport_view
+@implementation FlightMain
 AppDelegate *appDelegate;
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -21,6 +19,7 @@ AppDelegate *appDelegate;
     }
     return self;
 }
+
 - (void)didReceiveMemoryWarning
 {
     // Releases the view if it doesn't have a superview.
@@ -39,7 +38,8 @@ AppDelegate *appDelegate;
     // self.clearsSelectionOnViewWillAppear = NO;
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.navigationItem.title = @"เที่ยวบิน";
     UIBarButtonItem *add = [[UIBarButtonItem alloc]
                             initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
                             target:self
@@ -50,6 +50,7 @@ AppDelegate *appDelegate;
     self.navigationItem.leftBarButtonItem=self.editButtonItem;
     appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
 }
+
 - (void)viewDidUnload
 {
     [super viewDidUnload];
@@ -83,6 +84,7 @@ AppDelegate *appDelegate;
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -96,64 +98,34 @@ AppDelegate *appDelegate;
 {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return appDelegate.pp.count;
+    return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
     
-    UITableViewCell *cell = 
-    [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle 
-                                       reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
     
-	Passport *pp1 = [appDelegate.pp objectAtIndex:indexPath.row];
+    // Configure the cell...
     
-	// Set up the cell
-    cell.selectionStyle=UITableViewCellSelectionStyleNone;
-    NSString *strtype=[NSString alloc];
-    NSString *strexpire=[NSString alloc];
-    cell.textLabel.text = [NSString stringWithFormat:@"หนังสือเดินทาง %@", pp1.no];
-    if(pp1.type==1){
-        strtype = [NSString stringWithFormat:@"ประเภททั่วไป    "];
-    }
-    else{
-        strtype = [NSString stringWithFormat:@"ประเภทราชการ "];
-    }
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"dd-MM-yyyy"];
-    NSString *strDate = [dateFormatter stringFromDate:pp1.expire];
-    [dateFormatter release];
-    strexpire = [NSString stringWithFormat:@"หมดอายุ %@",strDate];
-    UIColor *ok=[UIColor colorWithRed:42.0/255.0 green:86.0/255.0 blue:42.0/255.0 alpha:1];
-    UIColor *warn=[UIColor colorWithRed:158.0/255.0 green:136.0/255.0 blue:56.0/255.0 alpha:1];
-    UIColor *nook=[UIColor colorWithRed:159.0/255.0 green:12.0/255.0 blue:10.0/255.0 alpha:1];
-    NSComparisonResult cmpdate=[pp1.expire compare:[NSDate date]];
-    if(cmpdate==NSOrderedDescending){
-        [cell.detailTextLabel setTextColor:ok];
-    }
-    else{
-        [cell.detailTextLabel setTextColor:nook];
-    }
-    cell.detailTextLabel.text = [strtype stringByAppendingString:strexpire];
-	return cell;
+    return cell;
 }
-
 
 /*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (self.tableView.editing) {
-        self.editButtonItem.title =  @"เสร็จ";
-    }
-    else
-        self.editButtonItem.title = @"ลบ";
-    return YES;
-}
+ // Override to support conditional editing of the table view.
+ - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+ {
+ if (self.tableView.editing) {
+ self.editButtonItem.title =  @"เสร็จ";
+ }
+ else
+ self.editButtonItem.title = @"ลบ";
+ return YES;
+ }
  */
 - (void) setEditing:(BOOL)editing animated:(BOOL)animated {
     //Do super before, it will change the name of the editing button
@@ -172,23 +144,6 @@ AppDelegate *appDelegate;
 }
 -(NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
     return @"ลบ";
-}
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        //Get the object to delete from the array.
-        AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-        Passport *pp1 = [appDelegate.pp objectAtIndex:indexPath.row];
-        [appDelegate removePassport:pp1];
-        
-        //Delete the object from the table.
-        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
 }
 
 
@@ -221,14 +176,5 @@ AppDelegate *appDelegate;
      [detailViewController release];
      */
 }
-- (void) add_Clicked:(id)sender {
-    if(avController == nil)
-        avController = [[addPassport alloc] initWithNibName:@"addPassport" bundle:nil];
-    
-    if(addNavigationController == nil)
-        addNavigationController = [[UINavigationController alloc] initWithRootViewController:avController];
-    UIColor *newcolor=[UIColor colorWithRed:0.0/255.0 green:74.0/255.0 blue:184.0/255.0 alpha:1];
-    addNavigationController.navigationBar.tintColor=newcolor;
-    [self.navigationController presentModalViewController:addNavigationController animated:YES];
-}
+
 @end

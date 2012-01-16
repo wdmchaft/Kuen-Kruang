@@ -10,6 +10,7 @@
 #import "AppDelegate.h"
 
 static sqlite3_stmt *init_statement = nil;
+
 static sqlite3 *database = nil;
 
 @implementation Passport
@@ -29,7 +30,7 @@ static sqlite3 *database = nil;
                 NSInteger primaryKey = sqlite3_column_int(selectstmt, 0);
                 Passport *pp1 = [[Passport alloc] initWithPrimaryKey:primaryKey];
                 pp1.no = [NSString stringWithUTF8String:(char *)sqlite3_column_text(selectstmt, 1)];
-                pp1.type = sqlite3_column_int(init_statement, 2);
+                pp1.type = sqlite3_column_int(selectstmt, 2);
                 NSString *expire_str=[NSString stringWithUTF8String:(char *)sqlite3_column_text(selectstmt, 3)];
                 NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
                 // this is imporant - we set our input date format to match our input string
@@ -84,9 +85,9 @@ static sqlite3 *database = nil;
     }
     
     sqlite3_bind_text(init_statement, 1, [no UTF8String], -1, SQLITE_TRANSIENT);
-    sqlite3_bind_int(init_statement, 2, [type intValue]);
+    sqlite3_bind_int(init_statement, 2, type);
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"dd-MM-yyyy"];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
     NSString *strDate = [dateFormatter stringFromDate:expire];
     [dateFormatter release];
     sqlite3_bind_text(init_statement, 3, [strDate UTF8String], -1, SQLITE_TRANSIENT);
@@ -100,4 +101,5 @@ static sqlite3 *database = nil;
     //Reset the add statement.
     sqlite3_reset(init_statement);
 }
+
 @end
