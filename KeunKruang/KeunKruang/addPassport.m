@@ -317,80 +317,98 @@
     [self.navigationController dismissModalViewControllerAnimated:YES];
 }
 - (void) add_Clicked:(id)sender {
-    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    //Create Object.
-    Passport *pp1 = [[Passport alloc] initWithPrimaryKey:0];
-    pp1.no = ppno_field.text;
-    if(pptype_field.text == @"ประเภททั่วไป"){
-        pp1.type=1;
+    if(![ppno_field.text length]){
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"เกิดข้อผิดพลาด" message:@"กรุณากรอกข้อมูลให้ครบ" delegate:self cancelButtonTitle:nil otherButtonTitles:@"ตกลง", nil];
+        [alert show];
+        [alert release];
+    }
+    else if(![pptype_field.text length]){
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"เกิดข้อผิดพลาด" message:@"กรุณากรอกข้อมูลให้ครบ" delegate:self cancelButtonTitle:nil otherButtonTitles:@"ตกลง", nil];
+        [alert show];
+        [alert release];
+    }
+    else if(![ppexpire_field.text length]){
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"เกิดข้อผิดพลาด" message:@"กรุณากรอกข้อมูลให้ครบ" delegate:self cancelButtonTitle:nil otherButtonTitles:@"ตกลง", nil];
+        [alert show];
+        [alert release];
     }
     else{
-        pp1.type=2;
-    }
-    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-    [dateFormat setDateFormat:@"dd-MM-yyyy"];
-    NSDate *date = [dateFormat dateFromString:ppexpire_field.text]; 
-    [dateFormat release];
-    pp1.expire = date;
+        AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+        //Create Object.
+        Passport *pp1 = [[Passport alloc] initWithPrimaryKey:0];
+        pp1.no = ppno_field.text;
+        if(pptype_field.text == @"ประเภททั่วไป"){
+            pp1.type=1;
+        }
+        else{
+            pp1.type=2;
+        }
+        NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+        [dateFormat setDateFormat:@"dd-MM-yyyy"];
+        NSDate *date = [dateFormat dateFromString:ppexpire_field.text]; 
+        [dateFormat release];
+        pp1.expire = date;
     
-    //Add the object
-    [appDelegate addPassport:pp1];
+        //Add the object
+        [appDelegate addPassport:pp1];
     
-    //
-    //Set up notification
-    NSCalendar *calendar = [NSCalendar autoupdatingCurrentCalendar];
+        //
+        //Set up notification
+        NSCalendar *calendar = [NSCalendar autoupdatingCurrentCalendar];
     
-    // Get the current date
-    NSDate *pickerDate = date;
+        // Get the current date
+        NSDate *pickerDate = date;
     
-    // Break the date up into components
-    NSDateComponents *dateComponents = [calendar components:( NSYearCalendarUnit | NSMonthCalendarUnit |  NSDayCalendarUnit )
+        // Break the date up into components
+        NSDateComponents *dateComponents = [calendar components:( NSYearCalendarUnit | NSMonthCalendarUnit |  NSDayCalendarUnit )
 												   fromDate:pickerDate];
-    NSDateComponents *dateComps = [[NSDateComponents alloc] init];
+        NSDateComponents *dateComps = [[NSDateComponents alloc] init];
     
-    //BELOW SOON
-    // Seven month(28 Week)
-    // Six month(24 Week)
-    // Three month(12 Week)
-    // One month(4 Week)
-    // Fifteen ( a week)
-    //ABOVE SOON
+        //BELOW SOON
+        // Seven month(28 Week)
+        // Six month(24 Week)
+        // Three month(12 Week)
+        // One month(4 Week)
+        // Fifteen ( a week)
+        //ABOVE SOON
     
-    // This day fire
-    [dateComps setDay:[dateComponents day]];
-    [dateComps setMonth:[dateComponents month]];
-    [dateComps setYear:[dateComponents year]];
-    [dateComps setHour:0];
-	[dateComps setMinute:0];
-	[dateComps setSecond:0];
-    NSDate *itemDate = [calendar dateFromComponents:dateComps];
-    [dateComps release];
+        // This day fire
+        [dateComps setDay:[dateComponents day]];
+        [dateComps setMonth:[dateComponents month]];
+        [dateComps setYear:[dateComponents year]];
+        [dateComps setHour:0];
+        [dateComps setMinute:0];
+        [dateComps setSecond:0];
+        NSDate *itemDate = [calendar dateFromComponents:dateComps];
+        [dateComps release];
     
-    UILocalNotification *localNotif = [[UILocalNotification alloc] init];
-    if (localNotif == nil)
-        return;
-    localNotif.fireDate = itemDate;
-    localNotif.timeZone = [NSTimeZone defaultTimeZone];
+        UILocalNotification *localNotif = [[UILocalNotification alloc] init];
+        if (localNotif == nil)
+            return;
+        localNotif.fireDate = itemDate;
+        localNotif.timeZone = [NSTimeZone defaultTimeZone];
     
-	// Notification details
-    localNotif.alertBody = [NSString stringWithFormat:@"หนังสือเดินทางเลขที่ %@ หมดอายุวันนี้", ppno_field.text];
-    // Set the action button
-    localNotif.alertAction = @"View";
+        // Notification details
+        localNotif.alertBody = [NSString stringWithFormat:@"หนังสือเดินทางเลขที่ %@ หมดอายุวันนี้", ppno_field.text];
+        // Set the action button
+        localNotif.alertAction = @"View";
     
-    localNotif.soundName = UILocalNotificationDefaultSoundName;
-    localNotif.applicationIconBadgeNumber = 1;
+        localNotif.soundName = UILocalNotificationDefaultSoundName;
+        localNotif.applicationIconBadgeNumber = 1;
     
-	// Specify custom data for the notification
-    NSDictionary *infoDict = [NSDictionary dictionaryWithObject:@"someValue" forKey:@"someKey"];
-    localNotif.userInfo = infoDict;
+        // Specify custom data for the notification
+        NSDictionary *infoDict = [NSDictionary dictionaryWithObject:@"someValue" forKey:@"someKey"];
+        localNotif.userInfo = infoDict;
     
-	// Schedule the notification
-    [[UIApplication sharedApplication] scheduleLocalNotification:localNotif];
-    [localNotif release];
+        // Schedule the notification
+        [[UIApplication sharedApplication] scheduleLocalNotification:localNotif];
+        [localNotif release];
     
-    //
-    //Dismiss the controller.
-    [pp1 release];
-    [self.navigationController dismissModalViewControllerAnimated:YES];
+        //
+        //Dismiss the controller.
+        [pp1 release];
+        [self.navigationController dismissModalViewControllerAnimated:YES];
+
+        }
 }
 @end
