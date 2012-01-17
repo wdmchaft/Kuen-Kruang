@@ -337,7 +337,7 @@
         //Create Object.
         Passport *pp1 = [[Passport alloc] initWithPrimaryKey:0];
         pp1.no = ppno_field.text;
-        if(pptype_field.text == @"ประเภททั่วไป"){
+        if([pptype_field.text isEqualToString:@"ประเภททั่วไป"]){
             pp1.type=1;
         }
         else{
@@ -349,13 +349,15 @@
         [dateFormat release];
         pp1.expire = date;
     
-        //Add the object
-        [appDelegate addPassport:pp1];
-    
         //
         //Set up notification
         NSCalendar *calendar = [NSCalendar autoupdatingCurrentCalendar];
-    
+        UILocalNotification *oneday = [[UILocalNotification alloc] init];
+        UILocalNotification *twoweek = [[UILocalNotification alloc] init];
+        UILocalNotification *fourweek = [[UILocalNotification alloc] init];
+        UILocalNotification *onetwoweek = [[UILocalNotification alloc] init];
+        UILocalNotification *twofourweek = [[UILocalNotification alloc] init];
+        
         // Get the current date
         NSDate *pickerDate = date;
     
@@ -364,49 +366,149 @@
 												   fromDate:pickerDate];
         NSDateComponents *dateComps = [[NSDateComponents alloc] init];
     
-        //BELOW SOON
-        // Seven month(28 Week)
+        //
         // Six month(24 Week)
-        // Three month(12 Week)
-        // One month(4 Week)
-        // Fifteen ( a week)
-        //ABOVE SOON
-    
-        // This day fire
         [dateComps setDay:[dateComponents day]];
         [dateComps setMonth:[dateComponents month]];
         [dateComps setYear:[dateComponents year]];
+        [dateComps setWeek:[dateComponents week]-24];
         [dateComps setHour:0];
         [dateComps setMinute:0];
         [dateComps setSecond:0];
         NSDate *itemDate = [calendar dateFromComponents:dateComps];
-        [dateComps release];
-    
-        UILocalNotification *localNotif = [[UILocalNotification alloc] init];
-        if (localNotif == nil)
+        
+        if (twofourweek == nil)
             return;
-        localNotif.fireDate = itemDate;
-        localNotif.timeZone = [NSTimeZone defaultTimeZone];
-    
+        twofourweek.fireDate = itemDate;
+        twofourweek.timeZone = [NSTimeZone defaultTimeZone];
+        
         // Notification details
-        localNotif.alertBody = [NSString stringWithFormat:@"หนังสือเดินทางเลขที่ %@ หมดอายุวันนี้", ppno_field.text];
+        twofourweek.alertBody = [NSString stringWithFormat:@"หนังสือเดินทางเลขที่ %@ หมดอายุในหกเดือน", ppno_field.text];
         // Set the action button
-        localNotif.alertAction = @"View";
-    
-        localNotif.soundName = UILocalNotificationDefaultSoundName;
-        localNotif.applicationIconBadgeNumber = 1;
-    
+        twofourweek.alertAction = @"View";
+        
+        twofourweek.soundName = UILocalNotificationDefaultSoundName;
+        twofourweek.applicationIconBadgeNumber = 1;
+        
         // Specify custom data for the notification
         NSDictionary *infoDict = [NSDictionary dictionaryWithObject:@"someValue" forKey:@"someKey"];
-        localNotif.userInfo = infoDict;
+        twofourweek.userInfo = infoDict;
+        
+        // Schedule the notification
+        [[UIApplication sharedApplication] scheduleLocalNotification:twofourweek];
+        [twofourweek release];
+        
+        //
+        // Three month(12 Week)
+        [dateComps setWeek:[dateComponents week]-12];
+        itemDate = [calendar dateFromComponents:dateComps];
+        if (onetwoweek == nil)
+            return;
+        onetwoweek.fireDate = itemDate;
+        onetwoweek.timeZone = [NSTimeZone defaultTimeZone];
+        
+        // Notification details
+        onetwoweek.alertBody = [NSString stringWithFormat:@"หนังสือเดินทางเลขที่ %@ หมดอายุในสามเดือน", ppno_field.text];
+        // Set the action button
+        onetwoweek.alertAction = @"View";
+        
+        onetwoweek.soundName = UILocalNotificationDefaultSoundName;
+        onetwoweek.applicationIconBadgeNumber = 1;
+        
+        // Specify custom data for the notification
+        onetwoweek.userInfo = infoDict;
+        
+        // Schedule the notification
+        [[UIApplication sharedApplication] scheduleLocalNotification:onetwoweek];
+        [onetwoweek release];
+        
+        //
+        // One month(4 Week)
+        [dateComps setWeek:[dateComponents week]-4];
+        itemDate = [calendar dateFromComponents:dateComps];
+        if (fourweek == nil)
+            return;
+        fourweek.fireDate = itemDate;
+        fourweek.timeZone = [NSTimeZone defaultTimeZone];
+        
+        // Notification details
+        fourweek.alertBody = [NSString stringWithFormat:@"หนังสือเดินทางเลขที่ %@ หมดอายุในหนึ่งเดือน", ppno_field.text];
+        // Set the action button
+        fourweek.alertAction = @"View";
+        
+        fourweek.soundName = UILocalNotificationDefaultSoundName;
+        fourweek.applicationIconBadgeNumber = 1;
+        
+        // Specify custom data for the notification
+        fourweek.userInfo = infoDict;
+        
+        // Schedule the notification
+        [[UIApplication sharedApplication] scheduleLocalNotification:fourweek];
+        [fourweek release];
+        
+        //
+        // Fifteen ( two week)
+        [dateComps setWeek:[dateComponents week]-2];
+        itemDate = [calendar dateFromComponents:dateComps];
+        if (twoweek == nil)
+            return;
+        twoweek.fireDate = itemDate;
+        twoweek.timeZone = [NSTimeZone defaultTimeZone];
+        
+        // Notification details
+        twoweek.alertBody = [NSString stringWithFormat:@"หนังสือเดินทางเลขที่ %@ หมดอายุในสองสัปดาห์", ppno_field.text];
+        // Set the action button
+        twoweek.alertAction = @"View";
+        
+        twoweek.soundName = UILocalNotificationDefaultSoundName;
+        twoweek.applicationIconBadgeNumber = 1;
+        
+        // Specify custom data for the notification
+        twoweek.userInfo = infoDict;
+        
+        // Schedule the notification
+        [[UIApplication sharedApplication] scheduleLocalNotification:twoweek];
+        [twoweek release];
+        
+        //
+        // This day fire
+        [dateComps setWeek:[dateComponents week]];
+        itemDate = [calendar dateFromComponents:dateComps];
+        [dateComps release];
+    
+        if (oneday == nil)
+            return;
+        oneday.fireDate = itemDate;
+        oneday.timeZone = [NSTimeZone defaultTimeZone];
+    
+        // Notification details
+        oneday.alertBody = [NSString stringWithFormat:@"หนังสือเดินทางเลขที่ %@ หมดอายุวันนี้", ppno_field.text];
+        // Set the action button
+        oneday.alertAction = @"View";
+    
+        oneday.soundName = UILocalNotificationDefaultSoundName;
+        oneday.applicationIconBadgeNumber = 1;
+    
+        // Specify custom data for the notification
+        oneday.userInfo = infoDict;
     
         // Schedule the notification
-        [[UIApplication sharedApplication] scheduleLocalNotification:localNotif];
-        [localNotif release];
+        [[UIApplication sharedApplication] scheduleLocalNotification:oneday];
+        [oneday release];
     
+        //
+        //Add the object
+        [appDelegate addPassport:pp1];
+        
         //
         //Dismiss the controller.
         [pp1 release];
+        pptype_field.text=nil;
+        ppno_field.text=nil;
+        ppexpire_field.text=nil;
+        [pptype_field release];
+        [ppno_field release];
+        [ppexpire_field release];
         [self.navigationController dismissModalViewControllerAnimated:YES];
 
         }

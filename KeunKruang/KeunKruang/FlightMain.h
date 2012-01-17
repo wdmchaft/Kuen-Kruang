@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Flight.h"
 
 @interface FlightMain : UITableViewController
 

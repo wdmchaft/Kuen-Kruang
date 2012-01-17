@@ -8,12 +8,14 @@
 
 #import "AppDelegate.h"
 #import "Passport.h"
+#import "Flight.h"
 
 @implementation AppDelegate
 
 @synthesize window = _window;
 @synthesize tabBarController = _tabBarController;
 @synthesize pp;
+@synthesize f;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -24,10 +26,12 @@
     //Initialize the coffee array.
     NSMutableArray *tempArray = [[NSMutableArray alloc] init];
     self.pp = tempArray;
+    self.f=tempArray;
     [tempArray release];
 
     //Once the db is copied, get the initial data to display on the screen.
     [Passport getInitialDataToDisplay:[self getDBPath]];
+    [Flight getInitialDataToDisplay:[self getDBPath]];
     // Add the tab bar controller's current view as a subview of the window
     self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];
@@ -142,4 +146,19 @@
     //Add it to the coffee array.
     [pp addObject:selected];
 }
+- (void) removeFlight:(Flight *)selected{
+    //Delete it from the database.
+    [selected deleteF];
+    
+    //Remove it from the array.
+    [f removeObject:selected];
+}
+- (void) addFlight:(Flight *)selected{
+    //Add it to the database.
+    [selected addF];
+    
+    //Add it to the coffee array.
+    [f addObject:selected];
+}
+
 @end

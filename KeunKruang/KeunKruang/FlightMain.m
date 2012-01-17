@@ -111,7 +111,32 @@ AppDelegate *appDelegate;
     }
     
     // Configure the cell...
+    Flight *f1 = [appDelegate.f objectAtIndex:indexPath.row];
     
+	// Set up the cell
+    cell.selectionStyle=UITableViewCellSelectionStyleBlue;
+    NSString *strdatetime=[NSString alloc];
+    NSString *strVisa = [NSString alloc];
+    cell.textLabel.text = [NSString stringWithFormat:@"เที่ยวบิน %@ ปลายทาง %@", f1.no,f1.dest];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"dd-MM-yyyy HH:mm"];
+    NSString *strDate = [dateFormatter stringFromDate:f1.datetime];
+    [dateFormatter release];
+    strdatetime = [NSString stringWithFormat:@"ออกเดินทาง %@",strDate];
+    
+    UIColor *ok=[UIColor colorWithRed:42.0/255.0 green:86.0/255.0 blue:42.0/255.0 alpha:1];
+    UIColor *warn=[UIColor colorWithRed:158.0/255.0 green:136.0/255.0 blue:56.0/255.0 alpha:1];
+    UIColor *nook=[UIColor colorWithRed:159.0/255.0 green:12.0/255.0 blue:10.0/255.0 alpha:1];
+    
+    if(strVisa==0){
+        strVisa = [NSString stringWithFormat:@"ขาดวีซ่า"];
+        [cell.detailTextLabel setTextColor:nook];
+    }
+    else{
+        strVisa = [NSString stringWithFormat:@"พร้อมเดินทาง"];
+        [cell.detailTextLabel setTextColor:ok];
+    }
+    cell.detailTextLabel.text = [strdatetime stringByAppendingString:strVisa];
     return cell;
 }
 

@@ -42,7 +42,8 @@
 		804FD98514BA206D009DCC4F /* LuggageParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 804FD98414BA206D009DCC4F /* LuggageParser.m */; };
 		8052A86F1468340300254242 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8052A86E1468340300254242 /* SystemConfiguration.framework */; };
 		8052A8731468347200254242 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 8052A8721468347200254242 /* Reachability.m */; };
-		807E752D146D9C8A00925C70 /* KeunKruang.db in Resources */ = {isa = PBXBuildFile; fileRef = 807E752C146D9C8A00925C70 /* KeunKruang.db */; };
+		8069691414C5D7B000FCD886 /* KeunKruang.db in Resources */ = {isa = PBXBuildFile; fileRef = 8069691314C5D7B000FCD886 /* KeunKruang.db */; };
+		8069691714C5D98100FCD886 /* Flight.m in Sources */ = {isa = PBXBuildFile; fileRef = 8069691614C5D98100FCD886 /* Flight.m */; };
 		807F2FB2144A033D008EF06A /* Weather.m in Sources */ = {isa = PBXBuildFile; fileRef = 807F2FB0144A033D008EF06A /* Weather.m */; };
 		807F2FB3144A033D008EF06A /* Weather.xib in Resources */ = {isa = PBXBuildFile; fileRef = 807F2FB1144A033D008EF06A /* Weather.xib */; };
 		80896F9714C159D40061D802 /* FlightMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 80896F9514C159D40061D802 /* FlightMain.m */; };
@@ -119,7 +120,9 @@
 		8052A86E1468340300254242 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		8052A8711468347200254242 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		8052A8721468347200254242 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
-		807E752C146D9C8A00925C70 /* KeunKruang.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = KeunKruang.db; sourceTree = SOURCE_ROOT; };
+		8069691314C5D7B000FCD886 /* KeunKruang.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = KeunKruang.db; sourceTree = SOURCE_ROOT; };
+		8069691514C5D98100FCD886 /* Flight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flight.h; sourceTree = "<group>"; };
+		8069691614C5D98100FCD886 /* Flight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Flight.m; sourceTree = "<group>"; };
 		807F2FAF144A033D008EF06A /* Weather.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Weather.h; sourceTree = "<group>"; };
 		807F2FB0144A033D008EF06A /* Weather.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Weather.m; sourceTree = "<group>"; };
 		807F2FB1144A033D008EF06A /* Weather.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Weather.xib; sourceTree = "<group>"; };
@@ -250,6 +253,8 @@
 				80896F9414C159D40061D802 /* FlightMain.h */,
 				80896F9514C159D40061D802 /* FlightMain.m */,
 				80896F9614C159D40061D802 /* FlightMain.xib */,
+				8069691514C5D98100FCD886 /* Flight.h */,
+				8069691614C5D98100FCD886 /* Flight.m */,
 			);
 			name = Flight;
 			sourceTree = "<group>";
@@ -323,8 +328,8 @@
 		80F2A0B4143EB3BA007D0D79 /* KeunKruang */ = {
 			isa = PBXGroup;
 			children = (
+				8069691314C5D7B000FCD886 /* KeunKruang.db */,
 				80896F9214C159B40061D802 /* Flight */,
-				807E752C146D9C8A00925C70 /* KeunKruang.db */,
 				80F2A0BD143EB3BA007D0D79 /* AppDelegate.h */,
 				8052A8711468347200254242 /* Reachability.h */,
 				80F2A0BE143EB3BA007D0D79 /* AppDelegate.m */,
@@ -476,7 +481,6 @@
 				800597341449F43C00302B9B /* Currency.xib in Resources */,
 				807F2FB3144A033D008EF06A /* Weather.xib in Resources */,
 				800E161D144F2EEB00571CBD /* Passport_view.xib in Resources */,
-				807E752D146D9C8A00925C70 /* KeunKruang.db in Resources */,
 				8014C090147CE14200D16D61 /* addPassport.xib in Resources */,
 				80F500B614B8C077002D402F /* VisaDetail.xib in Resources */,
 				80F500B814B8C077002D402F /* VisaMain.xib in Resources */,
@@ -485,6 +489,7 @@
 				801284E214BCA65A0047976B /* LuggageMain.xib in Resources */,
 				801284E714BCA81B0047976B /* LuggageDetail.xib in Resources */,
 				80896F9814C159D40061D802 /* FlightMain.xib in Resources */,
+				8069691414C5D7B000FCD886 /* KeunKruang.db in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -519,6 +524,7 @@
 				801284E114BCA65A0047976B /* LuggageMain.m in Sources */,
 				801284E614BCA81B0047976B /* LuggageDetail.m in Sources */,
 				80896F9714C159D40061D802 /* FlightMain.m in Sources */,
+				8069691714C5D98100FCD886 /* Flight.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
