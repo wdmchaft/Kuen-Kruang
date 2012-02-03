@@ -78,7 +78,7 @@
 	NSUInteger nimages = 0;
 	CGFloat cx = 0;
 	for (; ; nimages++) {
-		NSString *imageName = [NSString stringWithFormat:@"image%d.jpg", (nimages + 1)];
+		NSString *imageName = [NSString stringWithFormat:@"Tips%d.png", (nimages + 1)];
 		UIImage *image = [UIImage imageNamed:imageName];
 		if (image == nil) {
 			break;
@@ -100,7 +100,7 @@
 	}
 	
 	//self.pageControl.numberOfPages = nimages;
-    self.pageControl.numberOfPages = 0;
+    self.pageControl.numberOfPages = 3;
 	[scrollView setContentSize:CGSizeMake(cx, [scrollView bounds].size.height)];
 }
 

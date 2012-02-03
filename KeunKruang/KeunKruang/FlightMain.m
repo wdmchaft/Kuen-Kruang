@@ -7,7 +7,10 @@
 //
 
 #import "FlightMain.h"
+#import "addFlight.h"
+#import "editFlight.h"
 #import "AppDelegate.h"
+#import "Reachability.h"
 @implementation FlightMain
 AppDelegate *appDelegate;
 
@@ -49,6 +52,7 @@ AppDelegate *appDelegate;
     self.editButtonItem.title = @"ลบ";
     self.navigationItem.leftBarButtonItem=self.editButtonItem;
     appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    [self.tableView reloadData];
 }
 
 - (void)viewDidUnload
@@ -56,6 +60,10 @@ AppDelegate *appDelegate;
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
+    [avController release];
+    [addNavigationController release];
+    avController=nil;
+    addNavigationController=nil;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -67,11 +75,16 @@ AppDelegate *appDelegate;
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    [self.tableView reloadData];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
+    [avController release];
+    [addNavigationController release];
+    avController=nil;
+    addNavigationController=nil;
 }
 
 - (void)viewDidDisappear:(BOOL)animated
@@ -98,7 +111,7 @@ AppDelegate *appDelegate;
 {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return [appDelegate.f count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -107,39 +120,57 @@ AppDelegate *appDelegate;
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
     }
-    
     // Configure the cell...
     Flight *f1 = [appDelegate.f objectAtIndex:indexPath.row];
     
-	// Set up the cell
+    // Set up the cell
     cell.selectionStyle=UITableViewCellSelectionStyleBlue;
     NSString *strdatetime=[NSString alloc];
     NSString *strVisa = [NSString alloc];
-    cell.textLabel.text = [NSString stringWithFormat:@"เที่ยวบิน %@ ปลายทาง %@", f1.no,f1.dest];
+    cell.textLabel.text = [NSString stringWithFormat:@"%@ - %@", f1.no,f1.dest];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"dd-MM-yyyy HH:mm"];
     NSString *strDate = [dateFormatter stringFromDate:f1.datetime];
     [dateFormatter release];
-    strdatetime = [NSString stringWithFormat:@"ออกเดินทาง %@",strDate];
+    strdatetime = [NSString stringWithFormat:@"ออกเดินทาง %@ ",strDate];
     
     UIColor *ok=[UIColor colorWithRed:42.0/255.0 green:86.0/255.0 blue:42.0/255.0 alpha:1];
     UIColor *warn=[UIColor colorWithRed:158.0/255.0 green:136.0/255.0 blue:56.0/255.0 alpha:1];
     UIColor *nook=[UIColor colorWithRed:159.0/255.0 green:12.0/255.0 blue:10.0/255.0 alpha:1];
     
-    if(strVisa==0){
+    if(f1.visa==0){
         strVisa = [NSString stringWithFormat:@"ขาดวีซ่า"];
         [cell.detailTextLabel setTextColor:nook];
+        cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
     }
     else{
         strVisa = [NSString stringWithFormat:@"พร้อมเดินทาง"];
         [cell.detailTextLabel setTextColor:ok];
+        cell.accessoryType=UITableViewCellAccessoryNone;
     }
     cell.detailTextLabel.text = [strdatetime stringByAppendingString:strVisa];
+    
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        // Delete the row from the data source
+        //Get the object to delete from the array.
+        AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+        Flight *f1 = [appDelegate.f objectAtIndex:indexPath.row];
+        [appDelegate removeFlight:f1];
+        
+        //Delete the object from the table.
+        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    }   
+    else if (editingStyle == UITableViewCellEditingStyleInsert) {
+        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+    }   
+}
 /*
  // Override to support conditional editing of the table view.
  - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
@@ -200,6 +231,58 @@ AppDelegate *appDelegate;
      [self.navigationController pushViewController:detailViewController animated:YES];
      [detailViewController release];
      */
+    Flight *f1 = [appDelegate.f objectAtIndex:indexPath.row];
+    Reachability *r = [Reachability reachabilityWithHostName:@"www.lingoomtang.com"];
+    NetworkStatus internetStatus = [r currentReachabilityStatus];
+    if(f1.visa==1){
+        //do nothing
+    }
+    else{
+        //navigation for visa edit
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+        if ((internetStatus != ReachableViaWiFi) && (internetStatus != ReachableViaWWAN)) {
+            [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"เกิดข้อผิดพลาด" message:@"กรุณาเชื่อมต่อกับเครือข่ายอินเตอร์เน็ต" delegate:self cancelButtonTitle:nil otherButtonTitles:@"ตกลง", nil];
+            [alert show];
+            [alert release];
+        }
+        else{
+            [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+            editFlight *v =
+            [[editFlight alloc] initWithNibName:@"editFlight" bundle:[NSBundle mainBundle]];
+            v.currentFlight=f1;
+            [self.navigationController pushViewController:v animated:YES];
+        }
+    }
 }
-
+- (void) add_Clicked:(id)sender {
+    Reachability *r = [Reachability reachabilityWithHostName:@"www.lingoomtang.com"];
+    NetworkStatus internetStatus = [r currentReachabilityStatus];
+    if([appDelegate.pp count]==0){
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"เกิดข้อผิดพลาด" message:@"ท่านยังไม่มีหนังสือเดินทาง กรุณาเพิ่มหนังสือเดินทาง" delegate:self cancelButtonTitle:nil otherButtonTitles:@"ตกลง", nil];
+        [alert show];
+        [alert release];
+    }
+    else{
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+        if ((internetStatus != ReachableViaWiFi) && (internetStatus != ReachableViaWWAN)) {
+            [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"เกิดข้อผิดพลาด" message:@"กรุณาเชื่อมต่อกับเครือข่ายอินเตอร์เน็ต" delegate:self cancelButtonTitle:nil otherButtonTitles:@"ตกลง", nil];
+            [alert show];
+            [alert release];
+        }
+        else{
+            if(avController == nil)
+                avController = [[addFlight alloc] initWithNibName:@"addFlight" bundle:nil];
+            
+            if(addNavigationController == nil)
+                addNavigationController = [[UINavigationController alloc] initWithRootViewController:avController];
+            UIColor *newcolor=[UIColor colorWithRed:0.0/255.0 green:74.0/255.0 blue:184.0/255.0 alpha:1];
+            addNavigationController.navigationBar.tintColor=newcolor;
+            avController=nil;
+            [self.navigationController presentModalViewController:addNavigationController animated:YES];
+            
+        }   
+    }
+}
 @end

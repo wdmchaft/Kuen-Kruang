@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 @class Passport;
-@interface addPassport : UITableViewController<UIPickerViewDelegate,UIPickerViewDataSource>{
+@interface addPassport : UITableViewController<UIPickerViewDelegate,UIPickerViewDataSource,UITextFieldDelegate>{
     UITextField *ppno_field;
     UITextField *pptype_field;
     UITextField *ppexpire_field;
@@ -20,4 +20,5 @@
 @property (assign) UITextField *ppexpire_field;
 @property (assign) UIPickerView *selecttype;
 @property (assign) UIDatePicker *datePicker;
+- (void) hideKeyboard;
 @end

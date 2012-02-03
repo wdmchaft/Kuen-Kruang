@@ -12,6 +12,7 @@
 @synthesize lug;
 -(id) loadXMLByURL:(NSString *)urlString
 {
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
     lug          = [[NSMutableArray alloc] init];
     NSURL *url      = [NSURL URLWithString:urlString];
     NSData  *data   = [[NSData alloc] initWithContentsOfURL:url];
@@ -73,4 +74,14 @@
 {
     currentNodeContent = (NSMutableString *) [string stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
 }
+-(void) parserDidStartDocument:(NSXMLParser *)parser
+{
+    NSLog(@"parserDidStartDocument");
+}
+
+-(void) parserDidEndDocument: (NSXMLParser *)parser
+{
+    NSLog(@"parserDidEndDocument");
+}
+
 @end

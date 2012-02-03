@@ -7,8 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "addFlight.h"
 #import "Flight.h"
+#import "editFlight.h"
 
-@interface FlightMain : UITableViewController
-
+@interface FlightMain : UITableViewController{
+    addFlight *avController;
+    UINavigationController *addNavigationController;
+}
 @end

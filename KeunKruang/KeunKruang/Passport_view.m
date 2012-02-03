@@ -55,6 +55,10 @@ AppDelegate *appDelegate;
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
+    [avController release];
+    [addNavigationController release];
+    avController=nil;
+    addNavigationController=nil;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -96,7 +100,7 @@ AppDelegate *appDelegate;
 {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return appDelegate.pp.count;
+    return [appDelegate.pp count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

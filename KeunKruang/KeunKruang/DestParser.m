@@ -1,20 +1,20 @@
 //
-//  XMLParser.m
-//  TestXML
+//  DestParser.m
+//  KeunKruang
 //
-//  Created by Napawan Srisuksawad on 12/22/11.
-//  Copyright (c) 2011 Chulalongkorn University. All rights reserved.
+//  Created by Napawan Srisuksawad on 1/19/12.
+//  Copyright (c) 2012 Chulalongkorn University. All rights reserved.
 //
 
-#import "CListParser.h"
+#import "DestParser.h"
 
-@implementation CListParser
-@synthesize country_l;
+@implementation DestParser
+@synthesize dest_l;
 
 -(id) loadXMLByURL:(NSString *)urlString
 {
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
-    country_l          = [[NSMutableArray alloc] init];
+    dest_l          = [[NSMutableArray alloc] init];
     NSURL *url      = [NSURL URLWithString:urlString];
     NSData  *data   = [[NSData alloc] initWithContentsOfURL:url];
     parser          = [[NSXMLParser alloc] initWithData:data];
@@ -29,26 +29,30 @@
 }
 - (void) parser:(NSXMLParser *)parser didStartElement:(NSString *)elementname namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict
 {
-    if ([elementname isEqualToString:@"country"])
+    if ([elementname isEqualToString:@"airport"])
     {
-        currentCountry = [Country alloc];
+        currentDest = [Destination alloc];
     }
 }
 - (void) parser:(NSXMLParser *)parser didEndElement:(NSString *)elementname namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName
 {
-    if ([elementname isEqualToString:@"shortname"])
+    if ([elementname isEqualToString:@"code"])
     {
-        currentCountry.shortname = currentNodeContent;
+        currentDest.code = currentNodeContent;
     }
     if ([elementname isEqualToString:@"fullname"])
     {
-        currentCountry.fullname = currentNodeContent;
+        currentDest.fullname = currentNodeContent;
     }
     if ([elementname isEqualToString:@"country"])
     {
-        [country_l addObject:currentCountry];
-        [currentCountry release];
-        currentCountry = nil;
+        currentDest.country = currentNodeContent;
+    }
+    if ([elementname isEqualToString:@"airport"])
+    {
+        [dest_l addObject:currentDest];
+        [currentDest release];
+        currentDest = nil;
         [currentNodeContent release];
         currentNodeContent = nil;
     }
@@ -65,8 +69,8 @@
 
 -(void) parserDidEndDocument: (NSXMLParser *)parser
 {
-    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
     NSLog(@"parserDidEndDocument");
 }
 
 @end
+

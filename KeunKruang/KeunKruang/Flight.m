@@ -64,6 +64,7 @@ static sqlite3 *database = nil;
     if(database) sqlite3_close(database);
     if(init_statement) sqlite3_finalize(init_statement);
 }
+
 - (void) deleteF {
     if(init_statement == nil) {
         const char *sql = "delete from Flight where ID = ?";
@@ -80,7 +81,7 @@ static sqlite3 *database = nil;
     sqlite3_reset(init_statement);
 }
 
-- (void) addPP {
+- (void) addF {
     if(init_statement == nil) {
         const char *sql = "insert into Flight(No, DateTime, Destination, PPNo, PPType, Visa) Values(?, ?, ?, ?, ?, ?)";
         if(sqlite3_prepare_v2(database, sql, -1, &init_statement, NULL) != SQLITE_OK)
@@ -106,6 +107,18 @@ static sqlite3 *database = nil;
     //Reset the add statement.
     sqlite3_reset(init_statement);
 }
-
-
+- (void) changeVisa {
+    if(init_statement == nil) {
+        const char *sql = "update Flight Set Visa = 1 Where ID = ?";
+        if(sqlite3_prepare_v2(database, sql, -1, &init_statement, NULL) != SQLITE_OK)
+            NSAssert1(0, @"Error while creating update statement. '%s'", sqlite3_errmsg(database));
+    }
+        
+    sqlite3_bind_int(init_statement, 1, primaryKey);
+        
+    if(SQLITE_DONE != sqlite3_step(init_statement))
+            NSAssert1(0, @"Error while updating. '%s'", sqlite3_errmsg(database));
+        
+    sqlite3_reset(init_statement);
+}
 @end

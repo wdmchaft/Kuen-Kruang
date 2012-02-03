@@ -34,6 +34,6 @@
 - (id) initWithPrimaryKey:(NSInteger)pk;
 - (void) deleteF;
 - (void) addF;
-
+- (void) changeVisa;
 
 @end

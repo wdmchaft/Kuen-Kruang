@@ -34,7 +34,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.title=@"อัตราแลกเปลี่ยน";
-    NSString *urlAddress=@"http://www.bangkokbank.com/_layouts/NR/BangkokBankThaiWebApps/WebApp%20Currency%20Exchange%20Thai2/user_conversion_popup.asp";
+    NSString *urlAddress=@"http://www.xe.com/m/";
     //Create a URL object.
     NSURL *url = [NSURL URLWithString:urlAddress];
     

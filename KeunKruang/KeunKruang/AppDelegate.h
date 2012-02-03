@@ -26,5 +26,6 @@
 - (void) addPassport:(Passport *)selected;
 - (void) removeFlight:(Flight *)selected;
 - (void) addFlight:(Flight *)selected;
+- (void) updateFlight:(Flight *)selected;
 
 @end

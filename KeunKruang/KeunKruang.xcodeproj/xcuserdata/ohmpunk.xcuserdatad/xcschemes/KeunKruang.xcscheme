@@ -14,8 +14,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "80F2A0A9143EB3BA007D0D79"
-               BuildableName = "Boarding.app"
-               BlueprintName = "Boarding"
+               BuildableName = "iBoarding.app"
+               BlueprintName = "iBoarding"
                ReferencedContainer = "container:KeunKruang.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -32,8 +32,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "80F2A0A9143EB3BA007D0D79"
-            BuildableName = "Boarding.app"
-            BlueprintName = "Boarding"
+            BuildableName = "iBoarding.app"
+            BlueprintName = "iBoarding"
             ReferencedContainer = "container:KeunKruang.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -50,8 +50,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "80F2A0A9143EB3BA007D0D79"
-            BuildableName = "Boarding.app"
-            BlueprintName = "Boarding"
+            BuildableName = "iBoarding.app"
+            BlueprintName = "iBoarding"
             ReferencedContainer = "container:KeunKruang.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -68,8 +68,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "80F2A0A9143EB3BA007D0D79"
-            BuildableName = "Boarding.app"
-            BlueprintName = "Boarding"
+            BuildableName = "iBoarding.app"
+            BlueprintName = "iBoarding"
             ReferencedContainer = "container:KeunKruang.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

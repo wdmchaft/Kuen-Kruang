@@ -24,11 +24,12 @@
     [self copyDatabaseIfNeeded];
     
     //Initialize the coffee array.
-    NSMutableArray *tempArray = [[NSMutableArray alloc] init];
-    self.pp = tempArray;
-    self.f=tempArray;
-    [tempArray release];
-
+    NSMutableArray *ppArray = [[NSMutableArray alloc] init];
+    NSMutableArray *fArray = [[NSMutableArray alloc] init];
+    self.pp = ppArray;
+    self.f=fArray;
+    [ppArray release];
+    [fArray release];
     //Once the db is copied, get the initial data to display on the screen.
     [Passport getInitialDataToDisplay:[self getDBPath]];
     [Flight getInitialDataToDisplay:[self getDBPath]];
@@ -116,7 +117,7 @@
     
     if(!success) {
         
-        NSString *defaultDBPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"KeunKruang.db"];
+        NSString *defaultDBPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"KeunKruang.sqlite"];
         success = [fileManager copyItemAtPath:defaultDBPath toPath:dbPath error:&error];
         
         if (!success)
@@ -130,7 +131,7 @@
     //Expand any tildes and identify home directories.
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory , NSUserDomainMask, YES);
     NSString *documentsDir = [paths objectAtIndex:0];
-    return [documentsDir stringByAppendingPathComponent:@"KeunKruang.db"];
+    return [documentsDir stringByAppendingPathComponent:@"KeunKruang.sqlite"];
 }
 - (void) removePassport:(Passport *)selected{
     //Delete it from the database.
@@ -160,5 +161,12 @@
     //Add it to the coffee array.
     [f addObject:selected];
 }
-
+- (void) updateFlight:(Flight *)selected{
+    //update
+    [selected changeVisa];
+    
+    //refrsh array
+    [f removeAllObjects];
+    [Flight getInitialDataToDisplay:[self getDBPath]];
+}
 @end

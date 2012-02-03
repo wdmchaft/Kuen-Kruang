@@ -9,9 +9,9 @@
 #import "addPassport.h"
 #import "AppDelegate.h"
 #import "Passport.h"
-
 @implementation addPassport
-@synthesize ppno_field,pptype_field,ppexpire_field,selecttype;
+@class UIButton;
+@synthesize ppno_field,pptype_field,ppexpire_field,selecttype,datePicker;
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -34,13 +34,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    self.tableView.scrollEnabled=false;
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
+    UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyboard)];
+    [self.tableView addGestureRecognizer:gestureRecognizer];
     UIBarButtonItem *done = [[[UIBarButtonItem alloc] initWithTitle:@"เสร็จ" style:UIBarButtonItemStyleDone target:self action:@selector(add_Clicked:)] autorelease];
     UIBarButtonItem *cancel = [[[UIBarButtonItem alloc] initWithTitle:@"ยกเลิก" style:UIBarButtonItemStyleBordered target:self action:@selector(cancel_Clicked:)] autorelease];
     self.navigationItem.leftBarButtonItem = cancel;
@@ -98,6 +99,15 @@
     ppno_field=nil;
     selecttype=nil;
 }
+- (BOOL)textFieldShouldReturn:(UITextField *)theTextField {
+    [theTextField resignFirstResponder];
+    return YES;
+}
+- (void) hideKeyboard{
+    [ppno_field resignFirstResponder];
+    [pptype_field resignFirstResponder];
+    [ppexpire_field resignFirstResponder];
+}
 #pragma mark - Picker View
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow: (NSInteger)row inComponent:(NSInteger)component {
     // Handle the selection
@@ -134,7 +144,6 @@
         return nil;
     }
 }
-
 #pragma mark - Date Picker
 - (void)changeDateInLabel:(id)sender{
 	//Use NSDateFormatter to write out the date in a friendly format
@@ -167,6 +176,119 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        if ([indexPath section] == 0) {
+            if ([indexPath row] == 0) {
+                ppno_field = [[UITextField alloc] initWithFrame:CGRectMake(110, 11, 180, 22)];
+                ppno_field.delegate=self;
+                ppno_field.adjustsFontSizeToFitWidth = YES;
+                ppno_field.tag=67;
+                ppno_field.textColor = [UIColor colorWithRed:81.0/256 green:102.0/265 blue:145.0/256 alpha:1.0];
+                ppno_field.placeholder = @"เช่น J123456";
+                ppno_field.keyboardType = UIKeyboardTypeDefault;
+                ppno_field.returnKeyType = UIReturnKeyDone;
+                ppno_field.autocorrectionType = UITextAutocorrectionTypeNo; // no auto correction support
+                ppno_field.autocapitalizationType = UITextAutocapitalizationTypeAllCharacters; 
+                ppno_field.textAlignment = UITextAlignmentLeft;
+                ppno_field.tag = 0;
+                //playerTextField.delegate = self;
+                
+                [ppno_field setEnabled: YES];
+                
+                [cell addSubview:ppno_field];
+                
+                [ppno_field release];
+                
+            }
+            if ([indexPath row] == 1) {
+                selecttype = [[UIPickerView alloc]initWithFrame:CGRectMake(0, 250, 325, 250)];
+                selecttype.showsSelectionIndicator = YES;    // note this is default to NO
+                
+                [selecttype setDelegate:self];
+                
+                pptype_field = [[UITextField alloc] initWithFrame:CGRectMake(110, 11, 180, 22)];
+                pptype_field.delegate=self;
+                pptype_field.textColor = [UIColor colorWithRed:81.0/256 green:102.0/265 blue:145.0/256 alpha:1.0];
+                pptype_field.adjustsFontSizeToFitWidth = YES;
+                pptype_field.placeholder = @"ทั่วไป/ราชการ";
+                pptype_field.tag=68;
+                pptype_field.inputView = selecttype;
+                
+                UIToolbar* keyboardDoneButtonView = [[UIToolbar alloc] init];
+                keyboardDoneButtonView.barStyle = UIBarStyleBlack;
+                keyboardDoneButtonView.translucent = YES;
+                keyboardDoneButtonView.tintColor = nil;
+                [keyboardDoneButtonView sizeToFit];
+                
+                UIBarButtonItem* doneButton = [[[UIBarButtonItem alloc] initWithTitle:@"เสร็จ"
+                                                                                style:UIBarButtonItemStyleDone target:self
+                                                                               action:@selector(pickerDoneClicked:)] autorelease];
+                
+                [keyboardDoneButtonView setItems:[NSArray arrayWithObjects:doneButton, nil]];
+                
+                pptype_field.inputAccessoryView = keyboardDoneButtonView;  
+                
+                pptype_field.textAlignment = UITextAlignmentLeft;
+                pptype_field.tag = 0;
+                //playerTextField.delegate = self;
+                
+                [pptype_field setEnabled: YES];
+                
+                [cell addSubview:pptype_field];
+                [pptype_field release];
+                [selecttype release];
+                [keyboardDoneButtonView release];
+                
+            }
+            if ([indexPath row] == 2) {
+                datePicker = [[UIDatePicker alloc] initWithFrame:CGRectMake(0, 250, 325, 250)];
+                datePicker.datePickerMode = UIDatePickerModeDate;
+                datePicker.date = [NSDate date];
+                datePicker.minimumDate = [NSDate date];
+                [datePicker addTarget:self
+                               action:@selector(changeDateInLabel:)
+                     forControlEvents:UIControlEventValueChanged];
+                ppexpire_field = [[UITextField alloc] initWithFrame:CGRectMake(110, 11, 180, 22)];
+                ppexpire_field.delegate=self;
+                ppexpire_field.textColor = [UIColor colorWithRed:81.0/256 green:102.0/265 blue:145.0/256 alpha:1.0];
+                ppexpire_field.adjustsFontSizeToFitWidth = YES;
+                ppexpire_field.placeholder = @"เช่น 28-10-2015";
+                ppexpire_field.tag=69;
+                ppexpire_field.inputView=datePicker;
+                UIToolbar* keyboardDoneButtonView = [[UIToolbar alloc] init];
+                keyboardDoneButtonView.barStyle = UIBarStyleBlack;
+                keyboardDoneButtonView.translucent = YES;
+                keyboardDoneButtonView.tintColor = nil;
+                [keyboardDoneButtonView sizeToFit];
+                
+                UIBarButtonItem* doneButton = [[[UIBarButtonItem alloc] initWithTitle:@"เสร็จ"
+                                                                                style:UIBarButtonItemStyleDone target:self
+                                                                               action:@selector(pickerDoneClicked:)] autorelease];
+                
+                [keyboardDoneButtonView setItems:[NSArray arrayWithObjects:doneButton, nil]];
+                
+                ppexpire_field.inputAccessoryView = keyboardDoneButtonView;  
+                ppexpire_field.textAlignment = UITextAlignmentLeft;
+                ppexpire_field.tag = 0;
+                //playerTextField.delegate = self;
+                
+                [ppexpire_field setEnabled: YES];
+                
+                [cell addSubview:ppexpire_field];
+                
+                [ppexpire_field release];
+                [datePicker release];
+                [keyboardDoneButtonView release];
+            }
+        }
+        if ([indexPath row] == 0) { 
+            cell.textLabel.text = @"เลขที่";
+        }
+        else if([indexPath row] == 1){
+            cell.textLabel.text = @"ประเภท";
+        }
+        else{
+            cell.textLabel.text = @"วันหมดอายุ";
+        }
     }
     
     // Configure the cell...
@@ -174,92 +296,21 @@
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.accessoryType=UITableViewCellAccessoryNone;
     
-    if ([indexPath section] == 0) {
-        if ([indexPath row] == 0) {
-            ppno_field = [[UITextField alloc] initWithFrame:CGRectMake(110, 11, 180, 22)];
-            
-            ppno_field.adjustsFontSizeToFitWidth = YES;
-         
-            ppno_field.placeholder = @"เช่น J123456";
-            ppno_field.keyboardType = UIKeyboardTypeDefault;
-            ppno_field.returnKeyType = UIReturnKeyDone;
-            ppno_field.autocorrectionType = UITextAutocorrectionTypeNo; // no auto correction support
-            ppno_field.autocapitalizationType = UITextAutocapitalizationTypeAllCharacters; 
-            ppno_field.textAlignment = UITextAlignmentLeft;
-            ppno_field.tag = 0;
-            //playerTextField.delegate = self;
-            
-            ppno_field.clearButtonMode = UITextFieldViewModeWhileEditing; // no clear 'x' button to the right
-            [ppno_field setEnabled: YES];
-            
-            [cell addSubview:ppno_field];
-            
-            [ppno_field release];
-            
-        }
-        if ([indexPath row] == 1) {
-            selecttype = [[UIPickerView alloc]initWithFrame:CGRectMake(0, 250, 325, 250)];
-            selecttype.showsSelectionIndicator = YES;    // note this is default to NO
-            [selecttype setDelegate:self];
-            
-            pptype_field = [[UITextField alloc] initWithFrame:CGRectMake(110, 11, 180, 22)];
-            
-            pptype_field.adjustsFontSizeToFitWidth = YES;
-            pptype_field.placeholder = @"ทั่วไป/ราชการ";
-            
-            pptype_field.inputView = selecttype;
-            
-            pptype_field.textAlignment = UITextAlignmentLeft;
-            pptype_field.tag = 0;
-            //playerTextField.delegate = self;
-            
-            [pptype_field setEnabled: YES];
-            
-            [cell addSubview:pptype_field];
-            
-            [pptype_field release];
-            [selecttype release];
-            
-        }
-        if ([indexPath row] == 2) {
-            datePicker = [[UIDatePicker alloc] initWithFrame:CGRectMake(0, 250, 325, 250)];
-            datePicker.datePickerMode = UIDatePickerModeDate;
-            datePicker.date = [NSDate date];
-            datePicker.minimumDate = [NSDate date];
-            [datePicker addTarget:self
-                           action:@selector(changeDateInLabel:)
-                 forControlEvents:UIControlEventValueChanged];
-            ppexpire_field = [[UITextField alloc] initWithFrame:CGRectMake(110, 11, 180, 22)];
-            
-            ppexpire_field.adjustsFontSizeToFitWidth = YES;
-            ppexpire_field.placeholder = @"เช่น 28-10-2015";
-            
-            ppexpire_field.inputView=datePicker;
-            
-            ppexpire_field.textAlignment = UITextAlignmentLeft;
-            ppexpire_field.tag = 0;
-            //playerTextField.delegate = self;
-            
-            [ppexpire_field setEnabled: YES];
-            
-            [cell addSubview:ppexpire_field];
-            
-            [ppexpire_field release];
-            [datePicker release];
-        }
-    }
-    if ([indexPath row] == 0) { 
-        cell.textLabel.text = @"เลขที่";
-    }
-    else if([indexPath row] == 1){
-        cell.textLabel.text = @"ประเภท";
-    }
-    else{
-        cell.textLabel.text = @"วันหมดอายุ";
-    }
     return cell;
 }
 
+-(void)pickerDoneClicked:(id)sender{
+    [ppno_field resignFirstResponder];
+    [pptype_field resignFirstResponder];
+    [ppexpire_field resignFirstResponder];
+}
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    if (section == 0){
+        return @"ข้อมูลหนังสือเดินทาง";
+    }
+    return 0;
+}
 /*
  // Override to support conditional editing of the table view.
  - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
@@ -314,6 +365,9 @@
 }
 - (void) cancel_Clicked:(id)sender {
     //Dismiss the controller.
+    pptype_field.text=nil;
+    ppno_field.text=nil;
+    ppexpire_field.text=nil;
     [self.navigationController dismissModalViewControllerAnimated:YES];
 }
 - (void) add_Clicked:(id)sender {
@@ -506,9 +560,6 @@
         pptype_field.text=nil;
         ppno_field.text=nil;
         ppexpire_field.text=nil;
-        [pptype_field release];
-        [ppno_field release];
-        [ppexpire_field release];
         [self.navigationController dismissModalViewControllerAnimated:YES];
 
         }

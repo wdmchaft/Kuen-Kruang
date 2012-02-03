@@ -14,6 +14,8 @@
 		800E1613144F27CF00571CBD /* Passport.m in Sources */ = {isa = PBXBuildFile; fileRef = 800E1612144F27CF00571CBD /* Passport.m */; };
 		800E161C144F2EEB00571CBD /* Passport_view.m in Sources */ = {isa = PBXBuildFile; fileRef = 800E161A144F2EEB00571CBD /* Passport_view.m */; };
 		800E161D144F2EEB00571CBD /* Passport_view.xib in Resources */ = {isa = PBXBuildFile; fileRef = 800E161B144F2EEB00571CBD /* Passport_view.xib */; };
+		801225ED14DC3EF800ADF296 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 801225EB14DC3EF800ADF296 /* Default.png */; };
+		801225EE14DC3EF800ADF296 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 801225EC14DC3EF800ADF296 /* Default@2x.png */; };
 		801284E114BCA65A0047976B /* LuggageMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 801284DF14BCA65A0047976B /* LuggageMain.m */; };
 		801284E214BCA65A0047976B /* LuggageMain.xib in Resources */ = {isa = PBXBuildFile; fileRef = 801284E014BCA65A0047976B /* LuggageMain.xib */; };
 		801284E614BCA81B0047976B /* LuggageDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 801284E414BCA81B0047976B /* LuggageDetail.m */; };
@@ -22,6 +24,11 @@
 		8014C090147CE14200D16D61 /* addPassport.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8014C08E147CE14200D16D61 /* addPassport.xib */; };
 		804078371448B49B006F8A40 /* About.m in Sources */ = {isa = PBXBuildFile; fileRef = 804078351448B49B006F8A40 /* About.m */; };
 		804078381448B49B006F8A40 /* About.xib in Resources */ = {isa = PBXBuildFile; fileRef = 804078361448B49B006F8A40 /* About.xib */; };
+		8043E18614DC3BEC0051EDC7 /* Icon-small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 8043E18114DC3BEC0051EDC7 /* Icon-small-50.png */; };
+		8043E18714DC3BEC0051EDC7 /* Icon-small.png in Resources */ = {isa = PBXBuildFile; fileRef = 8043E18214DC3BEC0051EDC7 /* Icon-small.png */; };
+		8043E18814DC3BEC0051EDC7 /* Icon-small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8043E18314DC3BEC0051EDC7 /* Icon-small@2x.png */; };
+		8043E18914DC3BEC0051EDC7 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8043E18414DC3BEC0051EDC7 /* Icon.png */; };
+		8043E18A14DC3BEC0051EDC7 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8043E18514DC3BEC0051EDC7 /* Icon@2x.png */; };
 		804A3C2214488624002FCEDC /* Tips.m in Sources */ = {isa = PBXBuildFile; fileRef = 804A3C2014488624002FCEDC /* Tips.m */; };
 		804A3C2314488624002FCEDC /* Tips.xib in Resources */ = {isa = PBXBuildFile; fileRef = 804A3C2114488624002FCEDC /* Tips.xib */; };
 		804C742B1449855600251269 /* flight.png in Resources */ = {isa = PBXBuildFile; fileRef = 804C74231449855600251269 /* flight.png */; };
@@ -42,13 +49,25 @@
 		804FD98514BA206D009DCC4F /* LuggageParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 804FD98414BA206D009DCC4F /* LuggageParser.m */; };
 		8052A86F1468340300254242 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8052A86E1468340300254242 /* SystemConfiguration.framework */; };
 		8052A8731468347200254242 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 8052A8721468347200254242 /* Reachability.m */; };
-		8069691414C5D7B000FCD886 /* KeunKruang.db in Resources */ = {isa = PBXBuildFile; fileRef = 8069691314C5D7B000FCD886 /* KeunKruang.db */; };
 		8069691714C5D98100FCD886 /* Flight.m in Sources */ = {isa = PBXBuildFile; fileRef = 8069691614C5D98100FCD886 /* Flight.m */; };
 		807F2FB2144A033D008EF06A /* Weather.m in Sources */ = {isa = PBXBuildFile; fileRef = 807F2FB0144A033D008EF06A /* Weather.m */; };
 		807F2FB3144A033D008EF06A /* Weather.xib in Resources */ = {isa = PBXBuildFile; fileRef = 807F2FB1144A033D008EF06A /* Weather.xib */; };
+		80846D9814DC521500E2A86D /* Tips1.png in Resources */ = {isa = PBXBuildFile; fileRef = 80846D9614DC521500E2A86D /* Tips1.png */; };
+		80846D9914DC521500E2A86D /* Tips1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 80846D9714DC521500E2A86D /* Tips1@2x.png */; };
+		8085B83E14D9635500C3FB31 /* KeunKruang.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 8085B83D14D9635500C3FB31 /* KeunKruang.sqlite */; };
 		80896F9714C159D40061D802 /* FlightMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 80896F9514C159D40061D802 /* FlightMain.m */; };
 		80896F9814C159D40061D802 /* FlightMain.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80896F9614C159D40061D802 /* FlightMain.xib */; };
+		808BCBF114D9A12D0010A18A /* editFlight.m in Sources */ = {isa = PBXBuildFile; fileRef = 808BCBEF14D9A12C0010A18A /* editFlight.m */; };
+		808BCBF214D9A12D0010A18A /* editFlight.xib in Resources */ = {isa = PBXBuildFile; fileRef = 808BCBF014D9A12C0010A18A /* editFlight.xib */; };
 		809A63AD144984EA006AFFFB /* pouhnmk_logo_white.png in Resources */ = {isa = PBXBuildFile; fileRef = 809A63AB144984EA006AFFFB /* pouhnmk_logo_white.png */; };
+		80A6768914C863C000B3010A /* Destination.m in Sources */ = {isa = PBXBuildFile; fileRef = 80A6768814C863C000B3010A /* Destination.m */; };
+		80A6768D14C8643800B3010A /* DestParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 80A6768C14C8643800B3010A /* DestParser.m */; };
+		80B2D7CF14C747D100A45019 /* addFlight.m in Sources */ = {isa = PBXBuildFile; fileRef = 80B2D7CD14C747D100A45019 /* addFlight.m */; };
+		80B2D7D014C747D100A45019 /* addFlight.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80B2D7CE14C747D100A45019 /* addFlight.xib */; };
+		80BBC83014DC5CF50073958E /* Tips2.png in Resources */ = {isa = PBXBuildFile; fileRef = 80BBC82C14DC5CF50073958E /* Tips2.png */; };
+		80BBC83114DC5CF50073958E /* Tips2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 80BBC82D14DC5CF50073958E /* Tips2@2x.png */; };
+		80BBC83214DC5CF50073958E /* Tips3.png in Resources */ = {isa = PBXBuildFile; fileRef = 80BBC82E14DC5CF50073958E /* Tips3.png */; };
+		80BBC83314DC5CF50073958E /* Tips3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 80BBC82F14DC5CF50073958E /* Tips3@2x.png */; };
 		80C06ABD1448AC7600169599 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80C06ABC1448AC7600169599 /* UIKit.framework */; };
 		80C06ABF1448AC7C00169599 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80C06ABE1448AC7C00169599 /* Foundation.framework */; };
 		80C06AC11448AC8200169599 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80C06AC01448AC8200169599 /* CoreGraphics.framework */; };
@@ -81,6 +100,8 @@
 		800E1619144F2EEB00571CBD /* Passport_view.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Passport_view.h; sourceTree = "<group>"; };
 		800E161A144F2EEB00571CBD /* Passport_view.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Passport_view.m; sourceTree = "<group>"; };
 		800E161B144F2EEB00571CBD /* Passport_view.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Passport_view.xib; sourceTree = "<group>"; };
+		801225EB14DC3EF800ADF296 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		801225EC14DC3EF800ADF296 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		801284DE14BCA65A0047976B /* LuggageMain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LuggageMain.h; sourceTree = "<group>"; };
 		801284DF14BCA65A0047976B /* LuggageMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LuggageMain.m; sourceTree = "<group>"; };
 		801284E014BCA65A0047976B /* LuggageMain.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LuggageMain.xib; sourceTree = "<group>"; };
@@ -93,6 +114,11 @@
 		804078341448B49B006F8A40 /* About.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = About.h; sourceTree = "<group>"; };
 		804078351448B49B006F8A40 /* About.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = About.m; sourceTree = "<group>"; };
 		804078361448B49B006F8A40 /* About.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = About.xib; sourceTree = "<group>"; };
+		8043E18114DC3BEC0051EDC7 /* Icon-small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-small-50.png"; sourceTree = "<group>"; };
+		8043E18214DC3BEC0051EDC7 /* Icon-small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-small.png"; sourceTree = "<group>"; };
+		8043E18314DC3BEC0051EDC7 /* Icon-small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-small@2x.png"; sourceTree = "<group>"; };
+		8043E18414DC3BEC0051EDC7 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		8043E18514DC3BEC0051EDC7 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		804A3C1F14488624002FCEDC /* Tips.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tips.h; sourceTree = "<group>"; };
 		804A3C2014488624002FCEDC /* Tips.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tips.m; sourceTree = "<group>"; };
 		804A3C2114488624002FCEDC /* Tips.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Tips.xib; sourceTree = "<group>"; };
@@ -120,16 +146,32 @@
 		8052A86E1468340300254242 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		8052A8711468347200254242 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		8052A8721468347200254242 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
-		8069691314C5D7B000FCD886 /* KeunKruang.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = KeunKruang.db; sourceTree = SOURCE_ROOT; };
 		8069691514C5D98100FCD886 /* Flight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flight.h; sourceTree = "<group>"; };
 		8069691614C5D98100FCD886 /* Flight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Flight.m; sourceTree = "<group>"; };
 		807F2FAF144A033D008EF06A /* Weather.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Weather.h; sourceTree = "<group>"; };
 		807F2FB0144A033D008EF06A /* Weather.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Weather.m; sourceTree = "<group>"; };
 		807F2FB1144A033D008EF06A /* Weather.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Weather.xib; sourceTree = "<group>"; };
+		80846D9614DC521500E2A86D /* Tips1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tips1.png; sourceTree = "<group>"; };
+		80846D9714DC521500E2A86D /* Tips1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tips1@2x.png"; sourceTree = "<group>"; };
+		8085B83D14D9635500C3FB31 /* KeunKruang.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = KeunKruang.sqlite; sourceTree = "<group>"; };
 		80896F9414C159D40061D802 /* FlightMain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlightMain.h; sourceTree = "<group>"; };
 		80896F9514C159D40061D802 /* FlightMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlightMain.m; sourceTree = "<group>"; };
 		80896F9614C159D40061D802 /* FlightMain.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FlightMain.xib; sourceTree = "<group>"; };
+		808BCBEE14D9A12C0010A18A /* editFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = editFlight.h; sourceTree = "<group>"; };
+		808BCBEF14D9A12C0010A18A /* editFlight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = editFlight.m; sourceTree = "<group>"; };
+		808BCBF014D9A12C0010A18A /* editFlight.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = editFlight.xib; sourceTree = "<group>"; };
 		809A63AB144984EA006AFFFB /* pouhnmk_logo_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pouhnmk_logo_white.png; sourceTree = "<group>"; };
+		80A6768714C863C000B3010A /* Destination.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Destination.h; sourceTree = "<group>"; };
+		80A6768814C863C000B3010A /* Destination.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Destination.m; sourceTree = "<group>"; };
+		80A6768B14C8643800B3010A /* DestParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DestParser.h; sourceTree = "<group>"; };
+		80A6768C14C8643800B3010A /* DestParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DestParser.m; sourceTree = "<group>"; };
+		80B2D7CC14C747D100A45019 /* addFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = addFlight.h; sourceTree = "<group>"; };
+		80B2D7CD14C747D100A45019 /* addFlight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = addFlight.m; sourceTree = "<group>"; };
+		80B2D7CE14C747D100A45019 /* addFlight.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = addFlight.xib; sourceTree = "<group>"; };
+		80BBC82C14DC5CF50073958E /* Tips2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tips2.png; sourceTree = "<group>"; };
+		80BBC82D14DC5CF50073958E /* Tips2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tips2@2x.png"; sourceTree = "<group>"; };
+		80BBC82E14DC5CF50073958E /* Tips3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tips3.png; sourceTree = "<group>"; };
+		80BBC82F14DC5CF50073958E /* Tips3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tips3@2x.png"; sourceTree = "<group>"; };
 		80C06ABC1448AC7600169599 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		80C06ABE1448AC7C00169599 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		80C06AC01448AC8200169599 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -141,7 +183,7 @@
 		80DD3AAA14B8BF5C00E9E19B /* Country.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Country.m; sourceTree = "<group>"; };
 		80DD3AAB14B8BF5C00E9E19B /* Visa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Visa.h; sourceTree = "<group>"; };
 		80DD3AAC14B8BF5C00E9E19B /* Visa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Visa.m; sourceTree = "<group>"; };
-		80F2A0AA143EB3BA007D0D79 /* Boarding.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Boarding.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		80F2A0AA143EB3BA007D0D79 /* iBoarding.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iBoarding.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80F2A0B6143EB3BA007D0D79 /* KeunKruang-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "KeunKruang-Info.plist"; sourceTree = "<group>"; };
 		80F2A0B8143EB3BA007D0D79 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		80F2A0BA143EB3BA007D0D79 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -255,6 +297,12 @@
 				80896F9614C159D40061D802 /* FlightMain.xib */,
 				8069691514C5D98100FCD886 /* Flight.h */,
 				8069691614C5D98100FCD886 /* Flight.m */,
+				80B2D7CC14C747D100A45019 /* addFlight.h */,
+				80B2D7CD14C747D100A45019 /* addFlight.m */,
+				80B2D7CE14C747D100A45019 /* addFlight.xib */,
+				808BCBEE14D9A12C0010A18A /* editFlight.h */,
+				808BCBEF14D9A12C0010A18A /* editFlight.m */,
+				808BCBF014D9A12C0010A18A /* editFlight.xib */,
 			);
 			name = Flight;
 			sourceTree = "<group>";
@@ -281,6 +329,10 @@
 				80DD3AAA14B8BF5C00E9E19B /* Country.m */,
 				804FD97F14BA1F7E009DCC4F /* LuggageParser */,
 				80DD3AA814B8BF3E00E9E19B /* VisaParser */,
+				80A6768714C863C000B3010A /* Destination.h */,
+				80A6768814C863C000B3010A /* Destination.m */,
+				80A6768B14C8643800B3010A /* DestParser.h */,
+				80A6768C14C8643800B3010A /* DestParser.m */,
 			);
 			name = Parser;
 			sourceTree = "<group>";
@@ -299,6 +351,13 @@
 		80F2A09F143EB3BA007D0D79 = {
 			isa = PBXGroup;
 			children = (
+				801225EB14DC3EF800ADF296 /* Default.png */,
+				801225EC14DC3EF800ADF296 /* Default@2x.png */,
+				8043E18114DC3BEC0051EDC7 /* Icon-small-50.png */,
+				8043E18214DC3BEC0051EDC7 /* Icon-small.png */,
+				8043E18314DC3BEC0051EDC7 /* Icon-small@2x.png */,
+				8043E18414DC3BEC0051EDC7 /* Icon.png */,
+				8043E18514DC3BEC0051EDC7 /* Icon@2x.png */,
 				8052A86E1468340300254242 /* SystemConfiguration.framework */,
 				800E160F144F279F00571CBD /* libsqlite3.0.dylib */,
 				80F2A0B4143EB3BA007D0D79 /* KeunKruang */,
@@ -310,7 +369,7 @@
 		80F2A0AB143EB3BA007D0D79 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				80F2A0AA143EB3BA007D0D79 /* Boarding.app */,
+				80F2A0AA143EB3BA007D0D79 /* iBoarding.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -328,7 +387,7 @@
 		80F2A0B4143EB3BA007D0D79 /* KeunKruang */ = {
 			isa = PBXGroup;
 			children = (
-				8069691314C5D7B000FCD886 /* KeunKruang.db */,
+				8085B83D14D9635500C3FB31 /* KeunKruang.sqlite */,
 				80896F9214C159B40061D802 /* Flight */,
 				80F2A0BD143EB3BA007D0D79 /* AppDelegate.h */,
 				8052A8711468347200254242 /* Reachability.h */,
@@ -401,6 +460,12 @@
 		80F500BC14B8CE9D002D402F /* Tips */ = {
 			isa = PBXGroup;
 			children = (
+				80BBC82C14DC5CF50073958E /* Tips2.png */,
+				80BBC82D14DC5CF50073958E /* Tips2@2x.png */,
+				80BBC82E14DC5CF50073958E /* Tips3.png */,
+				80BBC82F14DC5CF50073958E /* Tips3@2x.png */,
+				80846D9614DC521500E2A86D /* Tips1.png */,
+				80846D9714DC521500E2A86D /* Tips1@2x.png */,
 				804A3C1F14488624002FCEDC /* Tips.h */,
 				804A3C2014488624002FCEDC /* Tips.m */,
 				804A3C2114488624002FCEDC /* Tips.xib */,
@@ -411,9 +476,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		80F2A0A9143EB3BA007D0D79 /* Boarding */ = {
+		80F2A0A9143EB3BA007D0D79 /* iBoarding */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 80F2A0D1143EB3BB007D0D79 /* Build configuration list for PBXNativeTarget "Boarding" */;
+			buildConfigurationList = 80F2A0D1143EB3BB007D0D79 /* Build configuration list for PBXNativeTarget "iBoarding" */;
 			buildPhases = (
 				80F2A0A6143EB3BA007D0D79 /* Sources */,
 				80F2A0A7143EB3BA007D0D79 /* Frameworks */,
@@ -423,9 +488,9 @@
 			);
 			dependencies = (
 			);
-			name = Boarding;
+			name = iBoarding;
 			productName = KeunKruang;
-			productReference = 80F2A0AA143EB3BA007D0D79 /* Boarding.app */;
+			productReference = 80F2A0AA143EB3BA007D0D79 /* iBoarding.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -449,7 +514,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				80F2A0A9143EB3BA007D0D79 /* Boarding */,
+				80F2A0A9143EB3BA007D0D79 /* iBoarding */,
 			);
 		};
 /* End PBXProject section */
@@ -489,7 +554,22 @@
 				801284E214BCA65A0047976B /* LuggageMain.xib in Resources */,
 				801284E714BCA81B0047976B /* LuggageDetail.xib in Resources */,
 				80896F9814C159D40061D802 /* FlightMain.xib in Resources */,
-				8069691414C5D7B000FCD886 /* KeunKruang.db in Resources */,
+				80B2D7D014C747D100A45019 /* addFlight.xib in Resources */,
+				8085B83E14D9635500C3FB31 /* KeunKruang.sqlite in Resources */,
+				808BCBF214D9A12D0010A18A /* editFlight.xib in Resources */,
+				8043E18614DC3BEC0051EDC7 /* Icon-small-50.png in Resources */,
+				8043E18714DC3BEC0051EDC7 /* Icon-small.png in Resources */,
+				8043E18814DC3BEC0051EDC7 /* Icon-small@2x.png in Resources */,
+				8043E18914DC3BEC0051EDC7 /* Icon.png in Resources */,
+				8043E18A14DC3BEC0051EDC7 /* Icon@2x.png in Resources */,
+				801225ED14DC3EF800ADF296 /* Default.png in Resources */,
+				801225EE14DC3EF800ADF296 /* Default@2x.png in Resources */,
+				80846D9814DC521500E2A86D /* Tips1.png in Resources */,
+				80846D9914DC521500E2A86D /* Tips1@2x.png in Resources */,
+				80BBC83014DC5CF50073958E /* Tips2.png in Resources */,
+				80BBC83114DC5CF50073958E /* Tips2@2x.png in Resources */,
+				80BBC83214DC5CF50073958E /* Tips3.png in Resources */,
+				80BBC83314DC5CF50073958E /* Tips3@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -525,6 +605,10 @@
 				801284E614BCA81B0047976B /* LuggageDetail.m in Sources */,
 				80896F9714C159D40061D802 /* FlightMain.m in Sources */,
 				8069691714C5D98100FCD886 /* Flight.m in Sources */,
+				80B2D7CF14C747D100A45019 /* addFlight.m in Sources */,
+				80A6768914C863C000B3010A /* Destination.m in Sources */,
+				80A6768D14C8643800B3010A /* DestParser.m in Sources */,
+				808BCBF114D9A12D0010A18A /* editFlight.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -641,7 +725,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		80F2A0D1143EB3BB007D0D79 /* Build configuration list for PBXNativeTarget "Boarding" */ = {
+		80F2A0D1143EB3BB007D0D79 /* Build configuration list for PBXNativeTarget "iBoarding" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				80F2A0D2143EB3BB007D0D79 /* Debug */,
